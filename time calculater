@@ -1,0 +1,13 @@
+# This is a time calculater
+# ct = currant time
+# ht = how many hours left til the alarm goes off.
+# This is twenty-four hour time and this only calculates the hour time unless you put something 100 is divisible by.
+ct = int(input("Put currant time."))
+ht = int(input("Put alarm time."))
+t = ((ct+ht)%24)
+if t > 12:
+    at = str((t%12)%60)
+    print(at + ":00 PM")   
+if t <= 12:
+    at = str((t%12)%60)
+    print(at + ":00 AM")
