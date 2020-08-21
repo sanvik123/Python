@@ -1,5 +1,5 @@
-chip = 2000
-chip1 = 2000
+chip = 10000
+chip1 = 10000
 pot = 0
 print("Your balance is", chip)
 while True:
@@ -165,12 +165,12 @@ while True:
                 global count5
                 if count7 == 0:
                     if (((g == m) or (g == n) or (g == s)or (g == f)or (g == v)or (g == h)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and(((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v)))):
-                        p2 += 10
-                        p2 += j/100
+                        p1 += 10
+                        p1 += g/100
                         count5 = 1
                     if (((h == m) or (h == n) or (h == s)or (h == f)or (h == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
-                        p2 += 10
-                        p2 += j/100
+                        p1 += 10
+                        p1 += h/100
                         count5 = 1
             fullhouse()
             fullhouse2()
@@ -185,7 +185,7 @@ while True:
                         count2 = 1
                     if (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
                         p2 += 5
-                        p2 += j/100
+                        p2 += q/100
                         count2 = 1
             def Three_of_a_kind():
                 global p1
@@ -199,7 +199,7 @@ while True:
                     if (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
                         p1 += 5
                         p1 += h/100
-                        count2 = 1
+                        count3 = 1
             Three_of_a_kind()
             t3()
             def pair():
@@ -413,7 +413,7 @@ while True:
                         break
                     print('Your opponent called')
                     print("Your opponents balance is", chip1)
-            if p1 >= 2 or rand5 == 1 or rand5 == 4:
+            if p1 >= 2 or rand5 == 4:
                 if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == ('no') :
                     chip1 -= 100
                     pot += 100
@@ -468,7 +468,7 @@ while True:
                         break
                     print("Your opponent called")
                     print("Your opponents balance is", chip1)
-            if rand5 == 3 or p1 > 2:
+            if rand5 == 3  or rand5 == 1 or p1 > 2:
                 if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == 'no':
                     chip1 -= 100
                     pot += 100
