@@ -16,6 +16,9 @@ while True:
             from random import randint
             from time import sleep
             def printCardFromDeck(randonNum, myDeck, randonNum1):
+                global deck
+                global a
+                global b
                 i = myDeck[randonNum]
                 y = myDeck[randonNum1]
                 print("Your cards are a {RANK} of {SUIT} and a {rank} of {suit}.\n\n".format(RANK = i[0], SUIT = i[1], rank = y[0], suit = y[1]))
@@ -138,82 +141,148 @@ while True:
             p2 = 0
             t = 0
             k = 0
-            count = 0 
-            count1 = 0
-            count2 = 0
-            count3 = 0
-            count4 = 0
-            count5 = 0
-            count6 = 0
-            count7 = 0
+            count = -1 
+            count1 = -1
+            count2 = -1
+            count3 = -1
+            count4 = -1
+            count5 = -1
+            count6 = -1
+            count7 = -1
             suit1 = [p[1], o[1], e[1], l[1], x[1], u[1], z[1]]
             suit2 = [comp1[1], comp2[1], e[1], l[1], x[1], u[1], z[1]]
             rank1 = [q, j, m, n, s, f, v]
             rank2 = [g, h, m, n, s, f, v]
-            count8 = 0
-            count9 = 0
-            count10 = 0
-            count11 = 0
-            count12 = 0
-            count13 = 0
-            count14 = 0
-            count15 = 0
+            count8 = -1
+            count9 = -1
+            count10 = -1
+            count11 = -1
+            count12 = -1
+            count13 = -1
+            count14 = -1
+            count15 = -1
+            count16 = -1
+            count17 = -1
+            count18 = 0
+            count19 = 0
+            def RoyalFlush1():
+                global p2
+                global count16
+                global count18
+                global suit1
+                global rank1
+                if count18 == 0:
+                    if ((rank1.__contains__(10) and rank1.__contains__(10 + 1) and rank1.__contains__(10 + 2) and rank1.__contains__(10+3) and rank1.__contains__(10+4)) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5))):
+                        p2 += 10
+                        p2 += j/100
+                        count16 = 1
+                else:
+                    count16 = 0
+            def RoyalFlush2():
+                global p1
+                global count17
+                global count19
+                global suit2
+                global rank2
+                if count19 == 0:
+                        if ((rank2.__contains__(10) and rank2.__contains__(10 + 1) and rank2.__contains__(10 + 2) and rank2.__contains__(10+3) and rank2.__contains__(10+4))) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
+                            p1 += 10
+                            p1 += g/100
+                            count17 = 1
+                else:
+                    count17 = 0
+            def StraightFlush2():
+                global p1
+                global count15
+                global count17
+                global suit2
+                global rank2
+                if count17 == 0:
+                    for yot in range(1, 11):
+                        if ((rank2.__contains__(yot) and rank2.__contains__(yot + 1) and rank2.__contains__(yot + 2) and rank2.__contains__(yot+3) and rank2.__contains__(yot+4))) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
+                            p1 += 10
+                            p1 += g/100
+                            count15 = 1
+                else:
+                    count15 = 0
+            def StraightFlush1():
+                global p2
+                global count14
+                global count16
+                global suit1
+                global rank1
+                if count16 == 0:
+                    for toyu in range(1, 11):
+                        if ((rank1.__contains__(toyu) and rank1.__contains__(toyu + 1) and rank1.__contains__(toyu + 2) and rank1.__contains__(toyu+3) and rank1.__contains__(toyu+4)) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5))):
+                            p2 += 10
+                            p2 += j/100
+                            count14 = 1
+                else:
+                    count14 = 0
             def F4():
                 global p2
                 global rank1
-                global count10
                 global count12
-                if count12 == 0:
+                global count14
+                if count14 == 0:
                     if rank1.count(q) == 4:
                         p2 += 40
                         p2 += q/100
-                        count10 = 1
+                        count12 = 1
                     if rank1.count(j) == 4:
                         p2 += 40
                         p2 += j/100
-                        count10 = 1
+                        count12 = 1
+                else:
+                    count12 = 0
             def F4_1():
                 global p1
                 global rank2
-                global count11
+                global count15
                 global count13
-                if count11 == 0:
+                if count15 == 0:
                     if rank1.count(h) == 4:
                         p1 += 40
                         p1 += h/100
-                        count10 = 1
+                        count13 = 1
                     if rank1.count(g) == 4:
                         p1 += 40
                         p1 += g/100
-                        count10 = 1
+                        count13 = 1
+                else:
+                    count13 = 0
             F4_1()
             F4()
             def fullhouse():
                 global p2
-                global count8
+                global count12
                 global count10
-                if count8 == 0:
+                if count12 == 0:
                     if (((j == m) or (j == n) or (j == s)or (j == f)or (j == v)or (j == q)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
                         p2 += 30
                         p2 += j/100
-                        count8 = 1
+                        count10 = 1
                     if (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
                         p2 += 10
                         p2 += j/100
-                        count8 = 1
+                        count10 = 1
+                else:
+                    count10 = 0
             def fullhouse2():
                 global p1
                 global count11
-                global count9
+                global count13
                 if count13 == 0:
                     if (((g == m) or (g == n) or (g == s)or (g == f)or (g == v)or (g == h)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and(((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v)))):
                         p1 += 30
                         p1 += g/100
-                        count9 = 1
+                        count11 = 1
                     if (((h == m) or (h == n) or (h == s)or (h == f)or (h == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
                         p1 += 30
                         p1 += h/100
-                        count9 = 1
+                        count11 = 1
+                else:
+                    count11 = 0
             fullhouse()
             fullhouse2()
             def flush1():
@@ -227,6 +296,8 @@ while True:
                         p2 += 20
                         p2 += j/100
                         count8 = 1
+                else:
+                    count8 = 0
             def flush2():
                 global p1
                 global count9
@@ -238,6 +309,8 @@ while True:
                         p1 += 20
                         p1 += g/100
                         count9 = 1
+                else:
+                    count9 = 0
             flush1()
             flush2()
             def straight1():
@@ -252,18 +325,22 @@ while True:
                             p2 += 10
                             p2 += j/100
                             count6 = 1
+                else:
+                    count6 = 0
             def straight2():
                 global p1
                 global count7
                 global count9
                 global suit2
                 global rank2
-                if count8 == 0:
+                if count9 == 0:
                     for o in range(1, 11):
                         if (rank2.__contains__(o) and rank2.__contains__(o + 1) and rank2.__contains__(o + 2) and rank2.__contains__(o+3) and rank2.__contains__(o+4)):
                             p1 += 10
                             p1 += g/100
                             count7 = 1
+                else:
+                    count7 = 0
             straight1()
             straight2()
             def t3():
@@ -279,6 +356,8 @@ while True:
                         p2 += 5
                         p2 += q/100
                         count2 = 1
+                else:
+                    count2 = 0
             def Three_of_a_kind():
                 global p1
                 global count3
@@ -292,10 +371,13 @@ while True:
                         p1 += 5
                         p1 += h/100
                         count3 = 1
+                else:
+                    count3 = 0
             Three_of_a_kind()
             t3()
             def pair():
                 global p2
+                global count2
                 global count
                 if count2 == 0:
                     if j == m:
@@ -342,6 +424,8 @@ while True:
                         p2 += 2
                         p2 += q/100
                         count = 1
+                else:
+                    count = 0
             def pair1():
                 global p1
                 global count1
@@ -390,6 +474,8 @@ while True:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
+                else:
+                    count1 = 0
             pair()
             pair1()
             def highcard():
