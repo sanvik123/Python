@@ -148,8 +148,8 @@ while True:
             count7 = 0
             suit1 = [p[1], o[1], e[1], l[1], x[1], u[1], z[1]]
             suit2 = [comp1[1], comp2[1], e[1], l[1], x[1], u[1], z[1]]
-            rank1 = [p[0], o[0], e[0], l[0], x[0], u[0], z[0]]
-            rank2 = [comp1[0], comp2[0], e[0], l[0], x[0], u[0], z[0]]
+            rank1 = [q, j, m, n, s, f, v]
+            rank2 = [g, h, m, n, s, f, v]
             count8 = 0
             count9 = 0
             count10 = 0
@@ -215,6 +215,7 @@ while True:
             fullhouse()
             fullhouse2()
             def flush1():
+                global p2
                 global count8
                 global count10
                 global suit1
@@ -225,6 +226,7 @@ while True:
                         p2 += j/100
                         count8 = 1
             def flush2():
+                global p1
                 global count9
                 global count11
                 global suit2
@@ -237,6 +239,7 @@ while True:
             flush1()
             flush2()
             def straight1():
+                global p2
                 global count6
                 global count8
                 global suit1
@@ -248,6 +251,7 @@ while True:
                             p2 += j/100
                             count6 = 1
             def straight2():
+                global p1
                 global count7
                 global count9
                 global suit2
