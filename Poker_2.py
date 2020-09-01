@@ -223,19 +223,16 @@ while True:
                     count14 = 0
             StraightFlush1()
             StraightFlush2()
+            count14 = 0
             def F4():
                 global p2
                 global rank1
                 global count12
                 global count14
                 if count14 == 0:
-                    if rank1.count(q) == 4:
+                    if rank1.count(q) == 4 or rank1.count(j) == 4:
                         p2 += 40
                         p2 += q/100
-                        count12 = 1
-                    if rank1.count(j) == 4:
-                        p2 += 40
-                        p2 += j/100
                         count12 = 1
                 else:
                     count12 = 0
