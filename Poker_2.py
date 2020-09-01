@@ -172,7 +172,7 @@ while True:
                         p2 += 40
                         p2 += j/100
                         count10 = 1
-            def F4():
+            def F4_1():
                 global p1
                 global rank2
                 global count11
@@ -186,6 +186,8 @@ while True:
                         p1 += 40
                         p1 += g/100
                         count10 = 1
+            F4_1()
+            F4()
             def fullhouse():
                 global p2
                 global count8
