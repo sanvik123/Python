@@ -242,13 +242,9 @@ while True:
                 global count15
                 global count13
                 if count15 == 0:
-                    if rank1.count(h) == 4:
+                    if rank1.count(h) == 4 or rank1.count(g) == 4:
                         p1 += 40
                         p1 += h/100
-                        count13 = 1
-                    if rank1.count(g) == 4:
-                        p1 += 40
-                        p1 += g/100
                         count13 = 1
                 else:
                     count13 = 0
