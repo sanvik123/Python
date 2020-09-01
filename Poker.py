@@ -191,6 +191,8 @@ while True:
                             count17 = 1
                 else:
                     count17 = 0
+            RoyalFlush1()
+            RoyalFlush2()
             def StraightFlush2():
                 global p1
                 global count15
@@ -219,6 +221,8 @@ while True:
                             count14 = 1
                 else:
                     count14 = 0
+            StraightFlush1()
+            StraightFlush2()
             def F4():
                 global p2
                 global rank1
