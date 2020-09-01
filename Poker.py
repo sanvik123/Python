@@ -1,10 +1,16 @@
-chip = 1000
-chip1 = 1000
+chip = 10000
+chip1 = 10000
 pot = 0
 print("Your balance is", chip)
-while True:  
-    if input("Do you want to play?    ") == 'yes':
-        while True:  
+while True:
+    while True:  
+        pot = 0
+        print("entree fee of 50") 
+        if input("Do you want to play?    ") == 'yes':
+            chip -= 50
+            chip1-= 50
+            pot += 100 
+            print("Your balance is", chip)
             import itertools
             import random
             from random import randint
@@ -19,16 +25,17 @@ while True:
             random.shuffle(deck)
             a = 0
             b = 1
+
             printCardFromDeck(a,deck, b)
             c = 2
             d = 3
             comp1 = deck[c]
             comp2 = deck[d]
-            p = deck[a]
-            o = deck[b]
-            e = deck[4]
-            l = deck[5]
-            x = deck[6]
+            p = deck[0] 
+            o = deck[1] 
+            e = deck[4] 
+            l = deck[5] 
+            x = deck[6] 
             u = deck[7] 
             z = deck[8]
             if e[0] == 'Ace':
@@ -139,201 +146,324 @@ while True:
             count5 = 0
             count6 = 0
             count7 = 0
-            if count6 == 0:
-                if (((j == m) or (j == n) or (j == s)or (j == f)or (j == v)or (j == q)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
-                    p2 += 10
-                    p2 += j/100
-                    count4 = 1
-                if (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
-                    p2 += 10
-                    p2 += j/100
-                    count4 = 1
-            if count7 == 0:
-                if (((g == m) or (g == n) or (g == s)or (g == f)or (g == v)or (g == h)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v))):
-                    p2 += 10
-                    p2 += j/100
-                    count4 = 1
-                if (((h == m) or (h == n) or (h == s)or (h == f)or (h == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
-                    p2 += 10
-                    p2 += j/100
-                    count4 = 1
-
-            if count4 == 0:
-
-                if (((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
-                    p2 += 5
-                    p2 += j/100
-                    count2 = 1
-                if (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
-                    p2 += 5
-                    p2 += j/100
-                    count2 = 1
-            if count5 == 0:
-                if (((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v))):
-                    p2 += 5
-                    p2 += j/100
-                    count3 = 1
-                if (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
-                    p2 += 5
-                    p2 += j/100
-                    count2 = 1
-            if count2 == 0:
-                if j == m:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if j == n:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if j == s:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if j == f:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if j == v:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if j == q:
-                    p2 += 2
-                    p2 += j/100
-                    count = 1
-                if q == m:
-                    p2 += 2
-                    p2 += q/100
-                    count = 1
-                if q == n:
-                    p2 += 2
-                    p2 += q/100
-                    count = 1
-                if q == s:
-                    p2 += 2
-                    p2 += q/100
-                    count = 1
-                if q == f:
-                    p2 += 2
-                    p2 += q/100
-                    count = 1
-                if q == v:
-                    p2 += 2
-                    p2 += q/100
-                    count = 1
-            if count3 == 0:
-                if g == m:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if g == n:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if g == s:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if g == f:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if g == v:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if g == h:
-                    p1 += 2
-                    p1 += g/100
-                    count1 = 1
-                if h == m:
-                    p1 += 2
-                    p1 += h/100
-                    count1 = 1
-                if h == n:
-                    p1 += 2
-                    p1 += h/100
-                    count1 = 1
-                if h == s:
-                    p1 += 2
-                    p1 += h/100
-                    count1 = 1
-                if h == f:
-                    p1 += 2
-                    p1 += h/100
-                    count1 = 1
-                if h == v:
-                    p1 += 2
-                    p1 += h/100
-                    count1 = 1
-            if count1 == 0:
-                if g > j:
-                    if g > q:
+            suit1 = [p[1], o[1], e[1], l[1], x[1], u[1], z[1]]
+            suit2 = [comp1[1], comp2[1], e[1], l[1], x[1], u[1], z[1]]
+            rank1 = [p[0], o[0], e[0], l[0], x[0], u[0], z[0]]
+            rank2 = [comp1[0], comp2[0], e[0], l[0], x[0], u[0], z[0]]
+            count8 = 0
+            count9 = 0
+            count10 = 0
+            count11 = 0
+            count12 = 0
+            count13 = 0
+            count14 = 0
+            count15 = 0
+            def F4():
+                global p2
+                global rank1
+                global count10
+                global count12
+                if count12 == 0:
+                    if rank1.count(q) == 4:
+                        p2 += 40
+                        p2 += q/100
+                        count10 = 1
+                    if rank1.count(j) == 4:
+                        p2 += 40
+                        p2 += j/100
+                        count10 = 1
+            def F4():
+                global p1
+                global rank2
+                global count11
+                global count13
+                if count11 == 0:
+                    if rank1.count(h) == 4:
+                        p1 += 40
+                        p1 += h/100
+                        count10 = 1
+                    if rank1.count(g) == 4:
+                        p1 += 40
                         p1 += g/100
-                    if g == q:
-                        if h > q:
-                            if h > j:
-                                p1 += g/100
-                                t = 1
-                if g > q:
+                        count10 = 1
+            def fullhouse():
+                global p2
+                global count8
+                global count10
+                if count8 == 0:
+                    if (((j == m) or (j == n) or (j == s)or (j == f)or (j == v)or (j == q)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
+                        p2 += 30
+                        p2 += j/100
+                        count8 = 1
+                    if (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
+                        p2 += 10
+                        p2 += j/100
+                        count8 = 1
+            def fullhouse2():
+                global p1
+                global count11
+                global count9
+                if count13 == 0:
+                    if (((g == m) or (g == n) or (g == s)or (g == f)or (g == v)or (g == h)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and(((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v)))):
+                        p1 += 30
+                        p1 += g/100
+                        count9 = 1
+                    if (((h == m) or (h == n) or (h == s)or (h == f)or (h == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
+                        p1 += 30
+                        p1 += h/100
+                        count9 = 1
+            fullhouse()
+            fullhouse2()
+            def flush1():
+                global count8
+                global count10
+                global suit1
+                global rank1
+                if count10 == 1:
+                    if ((suit1.count("Spades") == 5) or (suit1.count("Diamonds") == 5) or (suit1.count("Hearts") == 5) or (suit1.count("CLovers") == 5)):
+                        p2 += 20
+                        p2 += j/100
+                        count8 = 1
+            def flush2():
+                global count9
+                global count11
+                global suit2
+                global rank2
+                if count11 == 1:
+                    if ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
+                        p1 += 20
+                        p1 += g/100
+                        count9 = 1
+            flush1()
+            flush2()
+            def straight1():
+                global count6
+                global count8
+                global suit1
+                global rank1
+                if count8 == 0:
+                    for i in range(1, 11):
+                        if (rank1.__contains__(i) and rank1.__contains__(i + 1) and rank1.__contains__(i + 2) and rank1.__contains__(i+3) and rank1.__contains__(i+4)):
+                            p2 += 10
+                            p2 += j/100
+                            count6 = 1
+            def straight2():
+                global count7
+                global count9
+                global suit2
+                global rank2
+                if count8 == 0:
+                    for o in range(1, 11):
+                        if (rank2.__contains__(o) and rank2.__contains__(o + 1) and rank2.__contains__(o + 2) and rank2.__contains__(o+3) and rank2.__contains__(o+4)):
+                            p1 += 10
+                            p1 += g/100
+                            count7 = 1
+            straight1()
+            straight2()
+            def t3():
+                global p2
+                global count4
+                global count2
+                if count4 == 0:
+                    if (((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
+                        p2 += 5
+                        p2 += j/100
+                        count2 = 1
+                    if (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
+                        p2 += 5
+                        p2 += q/100
+                        count2 = 1
+            def Three_of_a_kind():
+                global p1
+                global count3
+                global count5
+                if count5 == 0:
+                    if (((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v))):
+                        p1 += 5
+                        p1 += g/100
+                        count3 = 1
+                    if (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
+                        p1 += 5
+                        p1 += h/100
+                        count3 = 1
+            Three_of_a_kind()
+            t3()
+            def pair():
+                global p2
+                global count
+                if count2 == 0:
+                    if j == m:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if j == n:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if j == s:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if j == f:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if j == v:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if j == q:
+                        p2 += 2
+                        p2 += j/100
+                        count = 1
+                    if q == m:
+                        p2 += 2
+                        p2 += q/100
+                        count = 1
+                    if q == n:
+                        p2 += 2
+                        p2 += q/100
+                        count = 1
+                    if q == s:
+                        p2 += 2
+                        p2 += q/100
+                        count = 1
+                    if q == f:
+                        p2 += 2
+                        p2 += q/100
+                        count = 1
+                    if q == v:
+                        p2 += 2
+                        p2 += q/100
+                        count = 1
+            def pair1():
+                global p1
+                global count1
+                if count3 == 0:
+                    if g == m:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if g == n:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if g == s:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if g == f:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if g == v:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if g == h:
+                        p1 += 2
+                        p1 += g/100
+                        count1 = 1
+                    if h == m:
+                        p1 += 2
+                        p1 += h/100
+                        count1 = 1
+                    if h == n:
+                        p1 += 2
+                        p1 += h/100
+                        count1 = 1
+                    if h == s:
+                        p1 += 2
+                        p1 += h/100
+                        count1 = 1
+                    if h == f:
+                        p1 += 2
+                        p1 += h/100
+                        count1 = 1
+                    if h == v:
+                        p1 += 2
+                        p1 += h/100
+                        count1 = 1
+            pair()
+            pair1()
+            def highcard():
+                global count1
+                global p1
+                global t
+                if count1 == 0:
                     if g > j:
-                        p1 += g/100
-                    if g == j:
-                        if h > j:
+                        if g > q:
+                            p1 += g/100
+                        if g == q:
                             if h > q:
-                                p1 += g/100
+                                if h > j:
+                                    p1 += g/100
+                                    t = 1
+                    if g > q:
+                        if g > j:
+                            p1 += g/100
+                        if g == j:
+                            if h > j:
+                                if h > q:
+                                    p1 += g/100
+                                    t = 1
+
+                    if ((t == 0) and (h >= j)):
+                        if h > q:
+                            p1 += h/100
+                        if h == q:
+                                p1 += h/100
                                 t = 1
 
-                if ((t == 0) and (h >= j)):
-                    if h > q:
-                        p1 += h/100
-                    if h == q:
+                    if ((t == 0) and (h >= q)):
+                        if h > j:
                             p1 += h/100
-                            t = 1
-
-                if ((t == 0) and (h >= q)):
-                    if h > j:
-                        p1 += h/100
-                    if h == j:
-                            p1 += h/100
-                            t = 1
-            if count == 0:
-                if q > g:
-                    if q > h:
-                        p2 += q/100
-                    if q == h:
-                            p2 += q/100
-                            k = 1
-
-                if q > h:
+                        if h == j:
+                                p1 += h/100
+                                t = 1
+            def highcard2():
+                global count
+                global p2
+                global k
+                if count == 0:
                     if q > g:
-                        p2 += q/100
-                    if q == g:
                         if q > h:
                             p2 += q/100
-                            k = 1
-                if ((k == 0) and (q >= g)):
-                    if j > h:
-                        p2 += j/100
-                    if j == h:
-                        if q > g:
-                            p2 += j/100
-                            k = 1
+                        if q == h:
+                                p2 += q/100
+                                k = 1
 
-                if ((k == 0) and (j >= h)):
-                    if j > g:
-                        p2 += q/100
-                    if j == g:
+                    if q > h:
                         if q > g:
                             p2 += q/100
-                            k = 1
+                        if q == g:
+                            if q > h:
+                                p2 += q/100
+                                k = 1
+                    if ((k == 0) and (q >= g)):
+                        if j > h:
+                            p2 += j/100
+                        if j == h:
+                            if q > g:
+                                p2 += j/100
+                                k = 1
 
+                    if ((k == 0) and (j >= h)):
+                        if j > g:
+                            p2 += q/100
+                        if j == g:
+                            if q > g:
+                                p2 += q/100
+                                k = 1
+            highcard()
+            highcard2()
 
 
             c6 = 0
             c7 = 0
             c8 = 0
+            ct = 0
+            ct1 = 0
             sleep(3)
             rand5 = randint(1,6)
             print("The first card on the table is a {RANK} of {SUIT}.".format(RANK = e[0], SUIT = e[1]))
@@ -342,6 +472,7 @@ while True:
             sleep(3)
             me = input("\nDo you want to continue? yes or no.\n").lower() 
             if me == 'no':
+                ct1 = 1
                 break
             if me == 'm':
                 chip += 500
@@ -350,114 +481,161 @@ while True:
                 print('You bet', bet)
                 chip -= bet
                 pot += bet
-                if chip <= 0:
+                if chip < 0:
                     print("You have lost.")
+                    ct1 = 1
                     break
                 print("Your balance is", chip)
-                if (p2 < 2) and rand == 1:
+                if (p2 < 2) and (rand == 1 or rand == 3) :
                     print('Your opponent folded')
+                    ct = 1
                     break
                 else:
                     chip1 -= bet
                     pot += bet
-                    if chip1 <= 0:
+                    if chip1 < 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
                     print('Your opponent called')
-            if p2 >= 3 or rand5 == 1:
-                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 20).lower()) == ('no') :
-                    chip1 -= 20
-                    pot += 20
-                    if chip1 <= 0:
+                    print("Your opponents balance is", chip1)
+            if p1 >= 2 or rand5 == 4:
+                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == ('no') :
+                    chip1 -= 100
+                    pot += 100
+                    if chip1 < 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("You folded")
+                    ct1 = 1
                     break
                 else:
-                    chip -= 20
-                    pot += 20
-                    if chip <= 0:
+                    chip1 -= 100
+                    pot += 100
+                    chip -= 100
+                    pot += 100
+                    if chip < 0:
                         print("You have lost.")
+                        ct1 = 1
+                        break
+                    if chip1 < 0:
+                        print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("Your balance is", chip)
+                    print("Your opponents balance is", chip1)
                     print('you called')
             print("The fourth card on the table is a {RANK} of {SUIT}.".format(RANK = u[0], SUIT = u[1]))
             sleep(2)
             if input("\nDo you want to continue? yes or no.\n").lower() == 'no':
+                ct1 = 1
                 break
             if input("\nDo you want to bet? yes or no.\n").lower() == 'yes':
                 bet1 = int(input("Enter the amount you want to bet.   "))
                 print('You bet', bet1)
                 chip -= bet1
                 pot += bet1
-                if chip <= 0:
+                if chip < 0:
                     print("You have lost.")
+                    ct1 = 1
                     break
                 print("Your balance is", chip)
-                if p1 < 2 and rand == 3:
+                if p1 < 2 and (rand == 2):
                     print('Your opponent folded')
+                    ct = 1
                     break
                 else:
                     chip1 -= bet1
                     pot += bet1
                     if chip1 <= 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
-            if p1 >= 3 or rand5 == 3:
-                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 20).lower()) == 'no':
-                    chip1 -= 20
-                    pot += 20
-                    if chip1 <= 0:
+                    print("Your opponent called")
+                    print("Your opponents balance is", chip1)
+            if rand5 == 3  or rand5 == 1 or p1 > 2:
+                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == 'no':
+                    chip1 -= 100
+                    pot += 100
+                    if chip1 < 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("You folded")
+                    ct1 = 1
                     break
                 else:
-                    chip -= 20
-                    pot += 20
-                    if chip <= 0:
+                    chip1 -= 100
+                    pot += 100
+                    chip -= 100
+                    pot += 100
+                    if chip < 0:
                         print("You have lost.")
+                        ct1 = 1
+                        break
+                    if chip1 < 0:
+                        print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("Your balance is", chip)
+                    print("Your opponents balance is", chip1)
                     print('you called')
             print("The fifth card on the table is a {RANK} of {SUIT}.".format(RANK = z[0], SUIT = z[1]))
             sleep(2)
             if input("\nDo you want to continue? yes or no.\n").lower() == 'no':
+                ct1 = 1
                 break
             if input("\nDo you want to bet? yes or no.\n").lower() == 'yes':
                 bet2 = int(input("Enter the amount you want to bet.   "))
                 print('You bet', bet2)
                 chip -= bet2
                 pot += bet2
-                if chip <= 0:
+                if chip < 0:
                     print("You have lost.")
+                    ct1 = 1
                     break
                 print("Your balance is", chip)
-                if p2 < 2 and rand == 5:
+                
+                if p2 < 2 and (rand == 4):
                     print('Your opponent folded')
+                    ct = 1
                     break
                 else:
                     chip1 -= bet2
                     pot += bet2
-                    if chip1 <= 0:
+                    if chip1 < 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
-            if p2 >= 3 or rand5 == 5:
-                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 20).lower()) == 'no':
-                    chip1 -= 20
-                    pot += 20
-                    if chip1 <= 0:
+                    print("Your opponent called")
+                    print("Your opponents balance is", chip1)
+            if p1 > 2 or rand5 == 5:
+                if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == 'no':
+                    chip1 -= 100
+                    pot += 100
+                    if chip1 < 0:
                         print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("You folded")
+                    ct1 = 1
                     break
                 else:
-                    chip -= 20
-                    pot += 20
-                    if chip <= 0:
+                    chip1 -= 100
+                    pot += 100
+                    chip -= 100
+                    pot += 100
+                    if chip < 0:
                         print("You have lost.")
+                        ct1 = 1
+                        break
+                    if chip1 < 0:
+                        print("Your opponent has lost.")
+                        ct = 1
                         break
                     print("Your balance is", chip)
+                    print("Your opponents balance is", chip1)
                     print('you called')
 
             sleep(3)
@@ -472,9 +650,6 @@ while True:
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp1[0], SUIT = comp1[1]))
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp2[0], SUIT = comp2[1]))
             sleep(1)
-            rand1 = randint(1, 6)
-            if (rand1 == 3) and (p2>p1):
-                break
             if p1 > p2:
                 chip1 += pot
                 print("\n\n\nThe computer wins.\n\n\n", p1, p2)
@@ -487,36 +662,60 @@ while True:
                 print("Your opponents balance is", chip1)
 
             if p1 == p2:
-                if (((q == h) and (j == g)) and ((q == g) and (j == h))):
+                if (((q == h) and (j == g)) or ((q == g) and (j == h))):
                     print("\n\n\n Tie!\n\n\n", p1, p2)
-                    print("Your balance is", chip)
-                    print("Your opponents balance is", chip1)
-                    chip = 1000
-                    chip1 = 1000
+                    print("Your balance is", chip, p1,p2)
+                    print("Your opponents balance is", chip1, p1,p2)
+                    chip += pot/2
+                    chip1 = pot/2
                 if (((q == h) and (j > g)) or ((q > g) and (j == h))):
                     chip += pot
                     print("\n\n\n You Win!\n\n\n", p1, p2)
-                    print("Your balance is", chip)
-                    print("Your opponents balance is", chip1)
+                    print("Your balance is", chip, p1,p2)
+                    print("Your opponents balance is", chip1, p1,p2)
                 if (((q > h) and (j == g)) or ((q == g) and (j > h))):
                     chip += pot
                     print("\n\n\n You Win!\n\n\n", p1, p2)
-                    print("Your balance is", chip)
-                    print("Your opponents balance is", chip1)
+                    print("Your balance is", chip, p1,p2)
+                    print("Your opponents balance is", chip1, p1,p2)
                 if (((h > q) and (j == g)) or ((q == g) and (h > j))):
                     chip1 += pot
                     print("\n\n\n The computer Wins!\n\n\n", p1, p2)
-                    print("Your opponents balance is", chip1)
-                    print("Your balance is", chip)
+                    print("Your opponents balance is", chip1, p1,p2)
+                    print("Your balance is", chip, p1,p2)
                 if (((q == h) and (g > j)) or ((g > q) and (j == h))):
                     chip1 += pot
                     print("\n\n\n The computer Wins!\n\n\n", p1, p2)
-                    print("Your opponents balance is", chip1)
-                    print("Your balance is", chip)
+                    print("Your opponents balance is", chip1, p1,p2)
+                    print("Your balance is", chip, p1,p2)
+    else:
+        break
+    if ct == 1:
+        chip += pot
+        print("\nYou Win\n", p1, p2)
+        print("Your opponents balance is", chip1, p1,p2)
+        print("Your balance is", chip, p1,p2)
+    if ct1 == 1:
+        chip1 += pot
+        print("\nThe computer wins\n", p1, p2)
+        print("Your opponents balance is", chip1, p1,p2)
+        print("Your balance is", chip, p1,p2)
+    pot = 0
     if chip <= 0:
         break
     if chip1 <= 0:
         break
-
-print("Your balance is", chip)
-print("Your opponents balance is", chip1)
+ct = 1
+ct1 = 1
+if chip > chip1:
+    print("\n\nYou win the game!\n\n")
+    print("Your balance is", chip)
+    print("Your opponents balance is", chip1)
+if chip == chip1:
+    print("\n\nTie!\n\n")
+    print("Your balance is", chip)
+    print("Your opponents balance is", chip1)
+if chip1 > chip:
+    print("\n\nYour opponent wins the game!\n\n")
+    print("Your balance is", chip)
+    print("Your opponents balance is", chip1)
