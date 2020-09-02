@@ -3,7 +3,7 @@ chip1 = 10000
 pot = 0
 print("Your balance is", chip)
 while True:
-    while True:  
+    while True:
         pot = 0
         print("entree fee of 50") 
         if input("Do you want to play?    ") == 'yes':
