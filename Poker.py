@@ -3,7 +3,7 @@ chip1 = 10000
 pot = 0
 print("Your balance is", chip)
 while True:
-    while True:
+    while True:  
         pot = 0
         print("entree fee of 50") 
         if input("Do you want to play?    ") == 'yes':
@@ -223,16 +223,19 @@ while True:
                     count14 = 0
             StraightFlush1()
             StraightFlush2()
-            count14 = 0
             def F4():
                 global p2
                 global rank1
                 global count12
                 global count14
                 if count14 == 0:
-                    if rank1.count(q) == 4 or rank1.count(j) == 4:
+                    if rank1.count(q) == 4:
                         p2 += 40
                         p2 += q/100
+                        count12 = 1
+                    elif rank1.count(j) == 4:
+                        p2 += 40
+                        p2 += j/100
                         count12 = 1
                 else:
                     count12 = 0
@@ -242,9 +245,13 @@ while True:
                 global count15
                 global count13
                 if count15 == 0:
-                    if rank1.count(h) == 4 or rank1.count(g) == 4:
+                    if rank1.count(h) == 4:
                         p1 += 40
                         p1 += h/100
+                        count13 = 1
+                    elif rank1.count(g) == 4:
+                        p1 += 40
+                        p1 += g/100
                         count13 = 1
                 else:
                     count13 = 0
@@ -259,7 +266,7 @@ while True:
                         p2 += 30
                         p2 += j/100
                         count10 = 1
-                    if (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
+                    elif (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
                         p2 += 10
                         p2 += j/100
                         count10 = 1
@@ -349,7 +356,7 @@ while True:
                         p2 += 5
                         p2 += j/100
                         count2 = 1
-                    if (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
+                    elif (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
                         p2 += 5
                         p2 += q/100
                         count2 = 1
@@ -364,7 +371,7 @@ while True:
                         p1 += 5
                         p1 += g/100
                         count3 = 1
-                    if (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
+                    elif (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
                         p1 += 5
                         p1 += h/100
                         count3 = 1
@@ -381,43 +388,43 @@ while True:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if j == n:
+                    elif j == n:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if j == s:
+                    elif j == s:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if j == f:
+                    elif j == f:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if j == v:
+                    elif j == v:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if j == q:
+                    elif j == q:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    if q == m:
+                    elif q == m:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    if q == n:
+                    elif q == n:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    if q == s:
+                    elif q == s:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    if q == f:
+                    elif q == f:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    if q == v:
+                    elif q == v:
                         p2 += 2
                         p2 += q/100
                         count = 1
@@ -431,43 +438,43 @@ while True:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if g == n:
+                    elif g == n:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if g == s:
+                    elif g == s:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if g == f:
+                    elif g == f:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if g == v:
+                    elif g == v:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if g == h:
+                    elif g == h:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    if h == m:
+                    elif h == m:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    if h == n:
+                    elif h == n:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    if h == s:
+                    elif h == s:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    if h == f:
+                    elif h == f:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    if h == v:
+                    elif h == v:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
@@ -737,6 +744,7 @@ while True:
             print(1)
             sleep(1)
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp1[0], SUIT = comp1[1]))
+            print(p1, p2)
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp2[0], SUIT = comp2[1]))
             sleep(1)
             if p1 > p2:
