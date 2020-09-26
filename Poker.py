@@ -1,6 +1,7 @@
 chip = 10000
 chip1 = 10000
 pot = 0
+got = 0
 print("Your balance is", chip)
 while True:
     while True:  
@@ -36,11 +37,11 @@ while True:
             comp2 = deck[d]
             p = deck[0] 
             o = deck[1] 
-            e = deck[4] 
-            l = deck[5] 
-            x = deck[6] 
-            u = deck[7] 
-            z = deck[8]
+            e = deck[5] 
+            l = deck[6] 
+            x = deck[7] 
+            u = deck[9] 
+            z = deck[11]
             if e[0] == 'Ace':
                 m = 14
             elif e[0] == 'King':
@@ -153,6 +154,48 @@ while True:
             suit2 = [comp1[1], comp2[1], e[1], l[1], x[1], u[1], z[1]]
             rank1 = [q, j, m, n, s, f, v]
             rank2 = [g, h, m, n, s, f, v]
+            if j == 14:
+                myrank1 = 1
+                rank1.append(myrank1)
+            if q == 14:
+                myrank2 = 1
+                rank1.append(myrank2)
+            if m == 14:
+                myrank3 = 1
+                rank1.append(myrank3)
+            if n == 14:
+                myrank4 = 1
+                rank1.append(myrank4)
+            if s == 14:
+                myrank5 = 1
+                rank1.append(myrank5)
+            if f == 14:
+                myrank6 = 1
+                rank1.append(myrank6)
+            if v == 14:
+                myrank7 = 1
+                rank1.append(myrank7)
+            if g == 14:
+                their_rank1 = 1
+                rank2.append(their_rank1)
+            if h == 14:
+                their_rank2 = 1
+                rank2.append(their_rank2)
+            if m == 14:
+                trank3 = 1
+                rank2.append(trank3)
+            if n == 14:
+                trank4 = 1
+                rank2.append(trank4)
+            if s == 14:
+                trank5 = 1
+                rank2.append(trank5)
+            if f == 14:
+                trank6 = 1
+                rank2.append(trank6)
+            if v == 14:
+                trank7 = 1
+                rank2.append(trank7)
             count8 = -1
             count9 = -1
             count10 = -1
@@ -173,8 +216,8 @@ while True:
                 global rank1
                 if count18 == 0:
                     if ((rank1.__contains__(10) and rank1.__contains__(10 + 1) and rank1.__contains__(10 + 2) and rank1.__contains__(10+3) and rank1.__contains__(10+4)) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5))):
-                        p2 += 10
-                        p2 += j/100
+                        p2 += 60
+                        p2 += max([j, q])/100
                         count16 = 1
                 else:
                     count16 = 0
@@ -186,8 +229,8 @@ while True:
                 global rank2
                 if count19 == 0:
                         if ((rank2.__contains__(10) and rank2.__contains__(10 + 1) and rank2.__contains__(10 + 2) and rank2.__contains__(10+3) and rank2.__contains__(10+4))) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
-                            p1 += 10
-                            p1 += g/100
+                            p1 += 60
+                            p1 += max([g, h])/100
                             count17 = 1
                 else:
                     count17 = 0
@@ -200,10 +243,10 @@ while True:
                 global suit2
                 global rank2
                 if count17 == 0:
-                    for yot in range(1, 11):
+                    for yot in range(1, 10):
                         if ((rank2.__contains__(yot) and rank2.__contains__(yot + 1) and rank2.__contains__(yot + 2) and rank2.__contains__(yot+3) and rank2.__contains__(yot+4))) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
-                            p1 += 10
-                            p1 += g/100
+                            p1 += 50
+                            p1 += max([g, h])/100
                             count15 = 1
                 else:
                     count15 = 0
@@ -214,10 +257,10 @@ while True:
                 global suit1
                 global rank1
                 if count16 == 0:
-                    for toyu in range(1, 11):
+                    for toyu in range(1, 10):
                         if ((rank1.__contains__(toyu) and rank1.__contains__(toyu + 1) and rank1.__contains__(toyu + 2) and rank1.__contains__(toyu+3) and rank1.__contains__(toyu+4)) and ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5))):
-                            p2 += 10
-                            p2 += j/100
+                            p2 += 50
+                            p2 += max([j, q])/100
                             count14 = 1
                 else:
                     count14 = 0
@@ -268,7 +311,7 @@ while True:
                         count10 = 1
                     elif (((q == m) or (q == n) or (q == s)or (q == f)or (q == v)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and ((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
                         p2 += 10
-                        p2 += j/100
+                        p2 += q/100
                         count10 = 1
                 else:
                     count10 = 0
@@ -298,7 +341,7 @@ while True:
                 if count10 == 1:
                     if ((suit1.count("Spades") == 5) or (suit1.count("Diamonds") == 5) or (suit1.count("Hearts") == 5) or (suit1.count("CLovers") == 5)):
                         p2 += 20
-                        p2 += j/100
+                        p2 += max([j, q])/100
                         count8 = 1
                 else:
                     count8 = 0
@@ -311,7 +354,7 @@ while True:
                 if count11 == 1:
                     if ((suit2.count("Spades") == 5) or (suit2.count("Diamonds") == 5) or (suit2.count("Hearts") == 5) or (suit2.count("CLovers") == 5)):
                         p1 += 20
-                        p1 += g/100
+                        p1 += max([g, h])/100
                         count9 = 1
                 else:
                     count9 = 0
@@ -327,7 +370,7 @@ while True:
                     for i in range(1, 11):
                         if (rank1.__contains__(i) and rank1.__contains__(i + 1) and rank1.__contains__(i + 2) and rank1.__contains__(i+3) and rank1.__contains__(i+4)):
                             p2 += 10
-                            p2 += j/100
+                            p2 += max([j, q])/100
                             count6 = 1
                 else:
                     count6 = 0
@@ -341,7 +384,7 @@ while True:
                     for o in range(1, 11):
                         if (rank2.__contains__(o) and rank2.__contains__(o + 1) and rank2.__contains__(o + 2) and rank2.__contains__(o+3) and rank2.__contains__(o+4)):
                             p1 += 10
-                            p1 += g/100
+                            p1 += max([g, h])/100
                             count7 = 1
                 else:
                     count7 = 0
@@ -562,18 +605,30 @@ while True:
             ct1 = 0
             sleep(3)
             rand5 = randint(1,6)
+            ra1 = randint(1,5)
+            ra12 = randint(1,5)
+            ra13 = randint(1,5)
+            ra2 = randint(1,5)
+            ra3 = randint(1,5)
+            ra4 = randint(1,5)
             print("The first card on the table is a {RANK} of {SUIT}.".format(RANK = e[0], SUIT = e[1]))
             print("The second card on the table is a {RANK} of {SUIT}.".format(RANK = l[0], SUIT = l[1]))
             print("The third card on the table is a {RANK} of {SUIT}.".format(RANK = x[0], SUIT = x[1]))
             sleep(3)
             me = input("\nDo you want to continue? yes or no.\n").lower() 
             if me == 'no':
+                print("")
                 ct1 = 1
                 break
             if me == 'm':
                 chip += 500
             if input("\nDo you want to bet? yes or no.\n").lower() == 'yes':
-                bet = int(input("Enter the amount you want to bet.   "))
+                try:
+                    bet = int(input("Enter the amount you want to bet.   "))
+                except ValueError:
+                    print("You have entered a invalid input. Run Again.\n")
+                    break
+                    break
                 print('You bet', bet)
                 chip -= bet
                 pot += bet
@@ -582,7 +637,7 @@ while True:
                     ct1 = 1
                     break
                 print("Your balance is", chip)
-                if (p2 < 2) and (rand == 1 or rand == 3) :
+                if (p1 < p2) and ra1 < 3 :
                     print('Your opponent folded')
                     ct = 1
                     break
@@ -595,7 +650,7 @@ while True:
                         break
                     print('Your opponent called')
                     print("Your opponents balance is", chip1)
-            if p1 >= 2 or rand5 == 4:
+            if (p1 > p2) or ra2 > 2:
                 if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == ('no') :
                     chip1 -= 100
                     pot += 100
@@ -628,7 +683,12 @@ while True:
                 ct1 = 1
                 break
             if input("\nDo you want to bet? yes or no.\n").lower() == 'yes':
-                bet1 = int(input("Enter the amount you want to bet.   "))
+                try:
+                    bet1 = int(input("Enter the amount you want to bet.   "))
+                except ValueError:
+                    print("You have entered a invalid input. Run Again.\n")
+                    break
+                    break
                 print('You bet', bet1)
                 chip -= bet1
                 pot += bet1
@@ -637,7 +697,7 @@ while True:
                     ct1 = 1
                     break
                 print("Your balance is", chip)
-                if p1 < 2 and (rand == 2):
+                if (p1 < p2) or ra12 < 3:
                     print('Your opponent folded')
                     ct = 1
                     break
@@ -650,7 +710,7 @@ while True:
                         break
                     print("Your opponent called")
                     print("Your opponents balance is", chip1)
-            if rand5 == 3  or rand5 == 1 or p1 > 2:
+            if (p1 > p2) or ra3 > 2:
                 if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == 'no':
                     chip1 -= 100
                     pot += 100
@@ -683,7 +743,12 @@ while True:
                 ct1 = 1
                 break
             if input("\nDo you want to bet? yes or no.\n").lower() == 'yes':
-                bet2 = int(input("Enter the amount you want to bet.   "))
+                try:
+                    bet2 = int(input("Enter the amount you want to bet.   "))
+                except ValueError:
+                    print("You have entered a invalid input. Run Again.\n")
+                    break
+                    break
                 print('You bet', bet2)
                 chip -= bet2
                 pot += bet2
@@ -693,7 +758,7 @@ while True:
                     break
                 print("Your balance is", chip)
                 
-                if p2 < 2 and (rand == 4):
+                if (p1 < p2) and ra13 < 3:
                     print('Your opponent folded')
                     ct = 1
                     break
@@ -706,7 +771,7 @@ while True:
                         break
                     print("Your opponent called")
                     print("Your opponents balance is", chip1)
-            if p1 > 2 or rand5 == 5:
+            if (p1 > p2) or ra2 > 2:
                 if input("Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100).lower()) == 'no':
                     chip1 -= 100
                     pot += 100
@@ -744,7 +809,6 @@ while True:
             print(1)
             sleep(1)
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp1[0], SUIT = comp1[1]))
-            print(p1, p2)
             print("Your opponent's card is a {RANK} of {SUIT}".format(RANK = comp2[0], SUIT = comp2[1]))
             sleep(1)
             if p1 > p2:
@@ -785,23 +849,25 @@ while True:
                     print("\n\n\n The computer Wins!\n\n\n", p1, p2)
                     print("Your opponents balance is", chip1, p1,p2)
                     print("Your balance is", chip, p1,p2)
+
     else:
         break
-    if ct == 1:
-        chip += pot
-        print("\nYou Win\n", p1, p2)
-        print("Your opponents balance is", chip1, p1,p2)
-        print("Your balance is", chip, p1,p2)
-    if ct1 == 1:
-        chip1 += pot
-        print("\nThe computer wins\n", p1, p2)
-        print("Your opponents balance is", chip1, p1,p2)
-        print("Your balance is", chip, p1,p2)
-    pot = 0
-    if chip <= 0:
-        break
-    if chip1 <= 0:
-        break
+    if got == 0:
+        if ct == 1:
+            chip += pot
+            print("\nYou Win\n", p1, p2)
+            print("Your opponents balance is", chip1, p1,p2)
+            print("Your balance is", chip, p1,p2)
+        if ct1 == 1:
+            chip1 += pot
+            print("\nThe computer wins\n", p1, p2)
+            print("Your opponents balance is", chip1, p1,p2)
+            print("Your balance is", chip, p1,p2)
+        pot = 0
+        if chip <= 0:
+            break
+        if chip1 <= 0:
+            break
 ct = 1
 ct1 = 1
 if chip > chip1:
