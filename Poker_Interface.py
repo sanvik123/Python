@@ -1198,7 +1198,6 @@ while True:
                 cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(4)
                 cd.undo()
-
             if p1 == p2:
                 if (((q == h) and (j == g)) or ((q == g) and (j == h))):
                     cd.write(("\n\n\nTie {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
