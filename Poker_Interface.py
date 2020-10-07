@@ -658,9 +658,9 @@ while True:
             ct1 = 0
             sleep(3)
             rand5 = randint(1,6)
-            ra1 = randint(1,5)
-            ra12 = randint(1,5)
-            ra13 = randint(1,5)
+            ra1 = randint(1,6)
+            ra12 = randint(1,6)
+            ra13 = randint(1,6)
             ra2 = randint(1,5)
             ra3 = randint(1,5)
             ra4 = randint(1,5)
@@ -797,9 +797,8 @@ while True:
 
             me = turtle.textinput("Choice", "Do you want to continue?")
             if me == 'n':
-                print("")
                 ct1 = 1
-                sys.exit()
+                break
             if me == 'm':
                 chip += 500
             if turtle.textinput("Choice", "\nDo you want to bet? y or n.\n") == ('y' or "yes"):
@@ -821,7 +820,7 @@ while True:
                 sleep(2)
                 cd.undo()
                 cd.goto(-240, -100)
-                if (((bett<200) and p1 > 2) or ((bett>200 and bett<500) and p1 > 5) or ((bett>500 and bett<1000) and p1 > 5) or ((bett>1000) and p1 > 10)) and ra1 < 3:
+                if (not((((bett<200) and p1 > 2) or ((bett>200 and bett<500) and p1 > 5) or ((bett>500 and bett<1000) and p1 > 10) or (((bett>1000) and bett<5000 )and p1 > 20)or ((bett>5000) and p1 > 30)))) and ra1 < 3:
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -840,9 +839,9 @@ while True:
                     cd.write(('  Your opponent called.\n Your opponents balance\n is {chip1er}'.format(chip1er = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
                     cd.undo()
-            if (p1 > p2) or ra2 > 2:
+            if (p1 > 2) or ra2 > 3:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100)) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
@@ -919,6 +918,9 @@ while True:
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n").lower() == ('y' or "yes"):
                 bet1 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
                 cd.goto(-240, -100)
+                cd.write("You bet {chier}".format(chier = bet1), font = ('Courier', 20, 'italic'), align="center")
+                sleep(1)
+                cd.undo()
                 bett1 = int(bet1)
                 chip -= bett1
                 pot += bett1
@@ -931,7 +933,7 @@ while True:
                     ct1 = 1
                     break
                 print("Your balance is", chip)
-                if (((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 5) or ((bett1>1000) and p1 > 10)) and ra12 < 3:
+                if (not((((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 10) or (((bett1>1000) and bett1<5000 )and p1 > 20)or ((bett1>5000) and p1 > 30)))) and ra12 < 3:
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -951,7 +953,7 @@ while True:
                     cd.undo()
             if (p1 > 2) or ra3 > 2:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100)) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
@@ -1030,7 +1032,7 @@ while True:
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n") == ('y' or "yes"):
                 bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
-                cd.write('You bet {jkjk}'.format(jkjk = bet2), font = ('Courier', 15, 'italic'), align="center")
+                cd.write('You bet {jkjk}'.format(jkjk = bet2), font = ('Courier', 20, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
                 bett2 = int(bet2)
@@ -1045,7 +1047,7 @@ while True:
                 cd.write('Your balance is {some5}'.format(some5 = chip), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
-                if (((bett2<200) and p1 > 2) or ((bett2>200 and bett2<500) and p1 > 5) or ((bett2>500 and bett2<1000) and p1 > 5) or ((bett2>1000) and p1 > 10)) and ra13 < 3:
+                if (not((((bett2<200) and p1 > 2) or ((bett2>200 and bett2<500) and p1 > 5) or ((bett2>500 and bett2<1000) and p1 > 10) or (((bett2>1000) and bett2<5000 )and p1 > 20)or ((bett2>5000) and p1 > 30)))) and ra13 < 3:
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1065,7 +1067,7 @@ while True:
                     cd.undo()
             if (p1 > 2) or ra2 > 2:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
@@ -1186,18 +1188,20 @@ while True:
                 mcard.write("{suit}".format( suit = (comp2[0])[0]), font = ('Courier', 50, 'italic'), align="center")
             mcard.color("black")
             sleep(1)
-            p1 = int(p1)
-            p2 = int(p2)
+            p1 = float(p1)
+            p2 = float(p2)
             if p1 > p2:
                 chip1 += pot
                 cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(4)
                 cd.undo()
+                sys.exit()
             if p2 > p1:
                 chip += pot
                 cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(4)
                 cd.undo()
+                sys.exit()
             if p1 == p2:
                 if (((q == h) and (j == g)) or ((q == g) and (j == h))):
                     cd.write(("\n\n\nTie {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
@@ -1208,42 +1212,122 @@ while True:
                     print("Your opponents balance is", chip1, p1,p2)
                     chip += pot/2
                     chip1 = pot/2
+                    sys.exit()
                 if (((q == h) and (j > g)) or ((q > g) and (j == h))):
                     chip += pot
                     cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
+                    sys.exit()
                 if (((q > h) and (j == g)) or ((q == g) and (j > h))):
                     chip += pot
                     cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
+                    sys.exit()
                 if (((h > q) and (j == g)) or ((q == g) and (h > j))):
                     chip1 += pot
                     cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
+                    sys.exit()
                 if (((q == h) and (g > j)) or ((g > q) and (j == h))):
                     chip1 += pot
                     cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
+                    sys.exit()
 
 
     else:
         break
     if got == 0:
+        mcard.undo()
+        mcard.pensize(3)
+        mcard.goto(-50, 250)
+        mcard.right(90)
+        mcard.pendown()
+        mcard.forward(100)
+        mcard.right(90)
+        mcard.forward(65)
+        mcard.right(90)
+        mcard.forward(100)
+        mcard.right(90)
+        mcard.forward(65)
+        mcard.penup()
+        mcard.forward(-65)
+        mcard.penup()
+        mcard.right(90)
+        mcard.forward(23)
+        mcard.right(-90)
+        mcard.forward(10)
+        if (comp1[1])[0] == "H":
+            mcard.color("red")
+        if (comp1[1])[0] == "S":
+            mcard.color("black")
+        if (comp1[1])[0] == "C":
+            mcard.color("green")
+        if (comp1[1])[0] == "D":
+            mcard.color("blue")
+        mcard.write("{suit}".format( suit = (comp1[1])[0]), font = ('Courier', 20, 'italic'), align="center")
+        mcard.right(90)
+        mcard.forward(50)
+        mcard.right(-90)
+        mcard.forward(20)
+        if (comp1[0]) == "10":
+            mcard.write("{suit}".format( suit = "10"), font = ('Courier', 50, 'italic'), align="center")
+        else:
+            mcard.write("{suit}".format( suit = (comp1[0])[0]), font = ('Courier', 50, 'italic'), align="center")
+        mcard.color("black")
+        mcard.right(90)
+        mcard.goto(25, 250)
+        mcard.pendown()
+        mcard.forward(100)
+        mcard.right(90)
+        mcard.forward(65)
+        mcard.right(90)
+        mcard.forward(100)
+        mcard.right(90)
+        mcard.forward(65)
+        mcard.penup()
+        mcard.forward(-65)
+        mcard.penup()
+        mcard.right(90)
+        mcard.forward(23)
+        mcard.right(-90)
+        mcard.forward(10)
+        if (comp2[1])[0] == "H":
+            mcard.color("red")
+        if (comp2[1])[0] == "S":
+            mcard.color("black")
+        if (comp2[1])[0] == "C":
+            mcard.color("green")
+        if (comp2[1])[0] == "D":
+            mcard.color("blue")
+        mcard.write("{suit}".format( suit = (comp2[1])[0]), font = ('Courier', 20, 'italic'), align="center")
+        mcard.right(90)
+        mcard.forward(50)
+        mcard.right(-90)
+        mcard.forward(20)
+        cd.goto(-240, -100)
+        if (comp2[0]) == "10":
+            mcard.write("{suit}".format( suit = "10"), font = ('Courier', 50, 'italic'), align="center")
+        else:
+            mcard.write("{suit}".format( suit = (comp2[0])[0]), font = ('Courier', 50, 'italic'), align="center")
+        mcard.color("black")
+        sleep(1)
         if ct == 1:
             chip += pot
-
             cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
+            wn.clear()
         if ct1 == 1:
             chip1 += pot
             cd.write(("\n\n\n      The computer wins {p1}, {p2}.\n\n\n      Your opponents balance\n    is {win}. Your balance\n    is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
+            wn.clear()
         pot = 0
         if chip <= 0:
             break
@@ -1255,12 +1339,15 @@ if chip > chip1:
     cd.write(("\n\nYou win the game {p1}, {p2}.\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
+    sys.exit()
 if chip == chip1:
     cd.write(("\n\nTie {p1}, {p2}.\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
+    sys.exit()
 if chip1 > chip:
     cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
+    sys.exit()
 wn.mainloop()
