@@ -842,7 +842,7 @@ while True:
                     cd.undo()
             if (p1 > p2) or ra2 > 2:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100)) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100)) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
@@ -949,9 +949,9 @@ while True:
                     cd.write(("Your opponent called.\n Your opponents balance\n is {cilper}".format(cilper = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
-            if (p1 > p2) or ra3 > 2:
+            if (p1 > 2) or ra3 > 2:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100)) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100)) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
@@ -1063,9 +1063,9 @@ while True:
                     cd.write(("Your opponent called.\n Your opponents balance\n is {chip2}".format(chip2 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
                     cd.undo()
-            if (p1 > p2) or ra2 > 2:
+            if (p1 > 2) or ra2 > 2:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = 100)) == ("y" or'yes'):
+                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = int(p1 + 1)*100) == ("y" or'yes'):
                     chip1 -= 100
                     pot += 100
                     if chip1 < 0:
