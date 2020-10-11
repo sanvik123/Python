@@ -757,7 +757,7 @@ while True:
                 break
             if me == 'm':
                 chip += 500
-            if turtle.textinput("Choice", "\nDo you want to bet? y or n.\n") == ('y' or "yes"):
+            if turtle.textinput("Choice", "\nDo you want to bet? y or n.\n") == ('y' or "yes" or ''):
                 bet = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
                 cd.goto(-240, -100)
                 cd.write(('You bet {chiper}'.format(chiper = bet)), font = ('Courier', 15, 'italic'), align="center")
