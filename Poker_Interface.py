@@ -1,23 +1,35 @@
 import sys
+import turtle
+from time import sleep
+from random import randint
 chip = 10000
 chip1 = 10000
 pot = 0
 got = 0
-print("Your balance is", chip)
+wn = turtle.Screen()
+wn.setup(1850, 1100)
 while True:
     while True:  
         pot = 0
-        print("entree fee of 50") 
-        if input("Do you want to play?    ") == 'yes':
+        cardS = turtle.Turtle()
+        cardS.hideturtle()
+        cardS.penup()
+        cardS.speed(0)
+        cardS.goto(-240, -100)
+        cardS.write("Your balance is {chip}".format(chip = chip), font = ('Courier', 20, 'italic'), align="center")
+        sleep(2)
+        cardS.undo()
+        cardS.write(("Entree fee of 50"), font = ('Courier', 20, 'italic'), align="center")
+        sleep(2)
+        t11 = turtle.textinput("Choice", "Do you want to play?    ")
+        cardS.undo() 
+        if t11 == ('yes') or t11 == ('y'):
             chip -= 50
             chip1-= 50
             pot += 100 
             print("Your balance is", chip)
             import itertools
             import random
-            from random import randint
-            from time import sleep
-            import turtle
             suit = ['Spades', 'Diamonds', 'Hearts', 'Clovers']
             suit_numbers = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
             deck = list(itertools.product(suit_numbers, suit))
@@ -36,7 +48,6 @@ while True:
             x = deck[7] 
             u = deck[9] 
             z = deck[11]
-            wn = turtle.Screen()
             card0 = turtle.Turtle()
             class Card:
                 def __init__(self, suiter, card):
@@ -918,7 +929,7 @@ while True:
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n").lower() == ('y' or "yes"):
                 bet1 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
                 cd.goto(-240, -100)
-                cd.write("You bet {chier}".format(chier = bet1), font = ('Courier', 20, 'italic'), align="center")
+                cd.write(("You bet {chier}".format(chier = bet1)), font = ('Courier', 20, 'italic'), align="center")
                 sleep(1)
                 cd.undo()
                 bett1 = int(bet1)
@@ -1032,7 +1043,7 @@ while True:
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n") == ('y' or "yes"):
                 bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
-                cd.write('You bet {jkjk}'.format(jkjk = bet2), font = ('Courier', 20, 'italic'), align="center")
+                cd.write(('You bet {jkjk}'.format(jkjk = bet2)), font = ('Courier', 20, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
                 bett2 = int(bet2)
@@ -1237,7 +1248,8 @@ while True:
                     sleep(4)
                     cd.undo()
                     sys.exit()
-
+        else:
+            sys.exit()
 
     else:
         break
