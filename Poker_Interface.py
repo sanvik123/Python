@@ -593,71 +593,16 @@ while True:
                 global count1
                 global p1
                 global t
-                if count1 == 0:
-                    if g > j:
-                        if g > q:
-                            p1 += g/100
-                        if g == q:
-                            if h > q:
-                                if h > j:
-                                    p1 += g/100
-                                    t = 1
-                    if g > q:
-                        if g > j:
-                            p1 += g/100
-                        if g == j:
-                            if h > j:
-                                if h > q:
-                                    p1 += g/100
-                                    t = 1
-
-                    if ((t == 0) and (h >= j)):
-                        if h > q:
-                            p1 += h/100
-                        if h == q:
-                                p1 += h/100
-                                t = 1
-
-                    if ((t == 0) and (h >= q)):
-                        if h > j:
-                            p1 += h/100
-                        if h == j:
-                                p1 += h/100
-                                t = 1
+                if max([g, h]) > max([j, q]):
+                    p1 += 1
+                    p1 += max([g, h])/100
             def highcard2():
                 global count
                 global p2
                 global k
-                if count == 0:
-                    if q > g:
-                        if q > h:
-                            p2 += q/100
-                        if q == h:
-                                p2 += q/100
-                                k = 1
-
-                    if q > h:
-                        if q > g:
-                            p2 += q/100
-                        if q == g:
-                            if q > h:
-                                p2 += q/100
-                                k = 1
-                    if ((k == 0) and (q >= g)):
-                        if j > h:
-                            p2 += j/100
-                        if j == h:
-                            if q > g:
-                                p2 += j/100
-                                k = 1
-
-                    if ((k == 0) and (j >= h)):
-                        if j > g:
-                            p2 += q/100
-                        if j == g:
-                            if q > g:
-                                p2 += q/100
-                                k = 1
+                if max([j, q]) > max([g, h]):
+                    p2 += 1
+                    p2 += max([j, q])/100
             highcard()
             highcard2()
 
@@ -853,8 +798,8 @@ while True:
             if (p1 > 2) or ra2 > 3:
                 cd.goto(-240, -100)
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
-                    chip1 -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -867,10 +812,10 @@ while True:
                     ct1 = 1
                     break
                 else:
-                    chip1 -= 100
-                    pot += 100
-                    chip -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
+                    chip -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     cd.goto(-240, -100)
                     if chip < 0:
                         cd.write(("Your have lost"), font = ('Courier', 15, 'italic'), align="center")
@@ -965,8 +910,8 @@ while True:
             if (p1 > 2) or ra3 > 2:
                 cd.goto(-240, -100)
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
-                    chip1 -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -980,10 +925,10 @@ while True:
                     ct1 = 1
                     break
                 else:
-                    chip1 -= 100
-                    pot += 100
-                    chip -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
+                    chip -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     if chip < 0:
                         cd.write(("You have lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1079,8 +1024,8 @@ while True:
             if (p1 > 2) or ra2 > 2:
                 cd.goto(-240, -100)
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
-                    chip1 -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1093,10 +1038,10 @@ while True:
                     ct1 = 1
                     break
                 else:
-                    chip1 -= 100
-                    pot += 100
-                    chip -= 100
-                    pot += 100
+                    chip1 -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
+                    chip -= ((int(p1)+1)*100)
+                    pot += ((int(p1)+1)*100)
                     if chip < 0:
                         cd.write(("You have lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1206,14 +1151,14 @@ while True:
                 cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(4)
                 cd.undo()
-                sys.exit()
-            if p2 > p1:
+                wn.clear()
+            elif p2 > p1:
                 chip += pot
                 cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(4)
                 cd.undo()
-                sys.exit()
-            if p1 == p2:
+                wn.clear()
+            else:
                 if (((q == h) and (j == g)) or ((q == g) and (j == h))):
                     cd.write(("\n\n\nTie {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
@@ -1223,33 +1168,21 @@ while True:
                     print("Your opponents balance is", chip1, p1,p2)
                     chip += pot/2
                     chip1 = pot/2
-                    sys.exit()
-                if (((q == h) and (j > g)) or ((q > g) and (j == h))):
+                    wn.clear()
+                elif (max([j, q]) > max([g, h])):
                     chip += pot
                     cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
-                    sys.exit()
-                if (((q > h) and (j == g)) or ((q == g) and (j > h))):
-                    chip += pot
-                    cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
-                    sleep(4)
-                    cd.undo()
-                    sys.exit()
-                if (((h > q) and (j == g)) or ((q == g) and (h > j))):
+                    wn.clear()
+                else:
                     chip1 += pot
                     cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
-                    sys.exit()
-                if (((q == h) and (g > j)) or ((g > q) and (j == h))):
-                    chip1 += pot
-                    cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
-                    sleep(4)
-                    cd.undo()
-                    sys.exit()
+                    wn.clear()
         else:
-            sys.exit()
+            wn.clear()
 
     else:
         break
