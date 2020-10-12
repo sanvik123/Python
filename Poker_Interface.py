@@ -593,16 +593,18 @@ while True:
                 global count1
                 global p1
                 global t
-                if max([g, h]) > max([j, q]):
-                    p1 += 1
-                    p1 += max([g, h])/100
+                if count1 == 0:
+                    if max([g, h]) > max([j, q]):
+                        p1 += 1
+                        p1 += max([g, h])/100
             def highcard2():
                 global count
                 global p2
                 global k
-                if max([j, q]) > max([g, h]):
-                    p2 += 1
-                    p2 += max([j, q])/100
+                if count == 0:
+                    if max([j, q]) > max([g, h]):
+                        p2 += 1
+                        p2 += max([j, q])/100
             highcard()
             highcard2()
 
