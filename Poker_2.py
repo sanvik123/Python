@@ -789,15 +789,21 @@ while True:
             if me == 'm':
                 chip += 500
             if turtle.textinput("Choice", "\nDo you want to bet? y or n.\n") == ('y' or "yes" or ''):
-                bet = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
-                if not(type(bet) == int):
-                    check_error = 1
-                    break
+                while True:
+                    try:
+                        bet = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
+                        bett = int(bet)
+                    except ValueError:
+                        cd.goto(-240, -100)
+                        cd.write(('Invalid Input, Try Again'.format(chiper = bet)), font = ('Courier', 15, 'italic'), align="center")
+                        sleep(1)
+                        cd.undo()
+                    else:
+                        break
                 cd.goto(-240, -100)
                 cd.write(('You bet {chiper}'.format(chiper = bet)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(1)
                 cd.undo()
-                bett = int(bet)
                 chip -= bett
                 pot += bett
                 wn.listen(timer, "p")
@@ -916,10 +922,17 @@ while True:
                 ct1 = 1
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n").lower() == ('y' or "yes"):
-                bet1 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
-                if not(type(bet1) == int):
-                    check_error = 1
-                    break
+                while True:
+                    try:
+                        bet1 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
+                        bett1 = int(bet1)
+                    except ValueError:
+                        cd.goto(-240, -100)
+                        cd.write(('Invalid Input, Try Again'.format(chiper = bet1)), font = ('Courier', 15, 'italic'), align="center")
+                        sleep(1)
+                        cd.undo()
+                    else:
+                        break
                 cd.goto(-240, -100)
                 cd.write(("You bet {chier}".format(chier = bet1)), font = ('Courier', 20, 'italic'), align="center")
                 sleep(1)
@@ -1035,9 +1048,17 @@ while True:
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n") == ('y' or "yes"):
                 bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
-                if not(type(bet2) == int):
-                    check_error = 1
-                    break
+                while True:
+                    try:
+                        bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
+                        bett2 = int(bet2)
+                    except ValueError:
+                        cd.goto(-240, -100)
+                        cd.write(('Invalid Input, Try Again'.format(chiper = bet2)), font = ('Courier', 15, 'italic'), align="center")
+                        sleep(1)
+                        cd.undo()
+                    else:
+                        break
                 cd.write(('You bet {jkjk}'.format(jkjk = bet2)), font = ('Courier', 20, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
@@ -1231,6 +1252,21 @@ while True:
                     sleep(4)
                     cd.undo()
                     wn.clear()
+            cd.goto(-240, -100)
+            for variable in range(12):
+                    if variable % 3 == 0:
+                        cd.write("Game Over. Restarting.", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(.3)
+                        cd.undo()
+                    elif variable % 3 == 1:
+                        cd.write("Game Over. Restarting..", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(.3)
+                        cd.undo()
+                    elif variable % 3 == 2:
+                        cd.write("Game Over. Restarting...", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(.3)
+                        cd.undo()
+            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
         else:
             wn.clear()
 
@@ -1310,34 +1346,33 @@ while True:
         else:
             mcard.write("{suit}".format( suit = (comp2[0])[0]), font = ('Courier', 50, 'italic'), align="center")
         mcard.color("black")
-        sleep(1)
-        if check_error == 1:
-            for variable in range(12):
-                if variable % 3 == 0:
-                    cd.write("Invalid User Input. Restarting.", font = ('Courier', 15, 'italic'), align="center")
-                    sleep(.5)
-                    cd.undo()
-                elif variable % 3 == 1:
-                    cd.write("Invalid User Input. Restarting..", font = ('Courier', 15, 'italic'), align="center")
-                    sleep(.5)
-                    cd.undo()
-                elif variable % 3 == 2:
-                    cd.write("Invalid User Input. Restarting...", font = ('Courier', 15, 'italic'), align="center")
-                    sleep(.5)
-                    cd.undo()
-            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+        sleep(1)           
         if ct == 1:
             chip += pot
             cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
             wn.clear()
-        if ct1 == 1:
+        elif ct1 == 1:
             chip1 += pot
             cd.write(("\n\n\n      The computer wins {p1}, {p2}.\n\n\n      Your opponents balance\n    is {win}. Your balance\n    is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
             wn.clear()
+        cd.goto(-240, -100)
+        for variable in range(12):
+            if variable % 3 == 0:
+                cd.write("Game Over. Restarting.", font = ('Courier', 15, 'italic'), align="center")
+                sleep(.3)
+                cd.undo()
+            elif variable % 3 == 1:
+                cd.write("Game Over. Restarting..", font = ('Courier', 15, 'italic'), align="center")
+                sleep(.3)
+                cd.undo()
+            elif variable % 3 == 2:
+                cd.write("Game Over. Restarting...", font = ('Courier', 15, 'italic'), align="center")
+                sleep(.3)
+                cd.undo()
         pot = 0
         if chip <= 0:
             break
