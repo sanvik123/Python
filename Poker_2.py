@@ -852,6 +852,7 @@ while True:
             me = turtle.textinput("Choice", "Do you want to continue?")
             if me == 'n':
                 ct1 = 1
+                got = 0
                 break
             if me == 'm':
                 chip += 500
@@ -880,6 +881,7 @@ while True:
                     sleep(2)
                     cd.undo()
                     ct1 = 1
+                    got = 0
                     break
                 cd.write(("Your balance is {chiper}".format(chiper = chip)), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
@@ -893,6 +895,7 @@ while True:
                     cd.undo()
                     cd.goto(-240, -100)
                     ct = 1
+                    got = 0
                     break
                 else:
                     chip1 -= bett
@@ -902,6 +905,7 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(('  Your opponent called.\n Your opponents balance\n is {chip1er}'.format(chip1er = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
@@ -918,11 +922,13 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("You folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
                     ct1 = 1
+                    got = 0
                     wn.listen(timer, "p")
                     wn.listen(quit, "q")
                     break
@@ -937,12 +943,14 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct1 = 1
+                        got = 0
                         break
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("Your balance is {some}.\n Your opponents balance\n is {some1}. You called.".format(some = chip, some1 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
@@ -987,6 +995,7 @@ while True:
             sleep(2)
             if turtle.textinput("Choice", "\nDo you want to continue? yes or no.\n") == ("n" or'no'):
                 ct1 = 1
+                got = 0
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n").lower() == ('y' or "yes"):
                 while True:
@@ -1014,6 +1023,7 @@ while True:
                     cd.undo()
                     cd.goto(-240, -100)
                     ct1 = 1
+                    got = 0
                     break
                 print("Your balance is", chip)
                 if (not((((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 10) or (((bett1>1000) and bett1<5000 )and p1 > 20)or ((bett1>5000) and p1 > 30)))) and ra12 < 3:
@@ -1021,6 +1031,7 @@ while True:
                     sleep(2)
                     cd.undo()
                     ct = 1
+                    got = 0
                     break
                 else:
                     chip1 -= bett1
@@ -1030,6 +1041,7 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("Your opponent called.\n Your opponents balance\n is {cilper}".format(cilper = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
@@ -1044,12 +1056,14 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("You folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
                     cd.goto(-240, -100)
                     ct1 = 1
+                    got = 0
                     break
                 else:
                     chip1 -= ((int(p1)+1)*100)
@@ -1061,12 +1075,14 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct1 = 1
+                        got = 0
                         break
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("Your balance is {some2}.\n Your opponents balance\n is {some3}. You called.".format(some2 = chip, some3 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
@@ -1112,6 +1128,7 @@ while True:
             cd.goto(-240, -100)
             if turtle.textinput("Choice", "\nDo you want to continue? yes or no.\n") == ("n" or'no'):
                 ct1 = 1
+                got = 0
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n") == ('y' or "yes"):
                 bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
@@ -1137,6 +1154,7 @@ while True:
                     sleep(2)
                     cd.undo()
                     ct1 = 1
+                    got = 0
                     break
                 cd.write('Your balance is {some5}'.format(some5 = chip), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
@@ -1146,6 +1164,7 @@ while True:
                     sleep(2)
                     cd.undo()
                     ct = 1
+                    got = 0
                     break
                 else:
                     chip1 -= bett2
@@ -1155,6 +1174,7 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("Your opponent called.\n Your opponents balance\n is {chip2}".format(chip2 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
@@ -1169,11 +1189,13 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("You folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
                     ct1 = 1
+                    got = 0
                     break
                 else:
                     chip1 -= ((int(p1)+1)*100)
@@ -1185,18 +1207,20 @@ while True:
                         sleep(2)
                         cd.undo()
                         ct1 = 1
+                        got = 0
                         break
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
                         cd.undo()
                         ct = 1
+                        got = 0
                         break
                     cd.write(("Your opponent called.\n Your opponents balance\n is {chip2}".format(chip2 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
                     cd.undo()
 
-            cd.write(("show cards in"), font = ('Courier', 15, 'italic'), align="center")
+            cd.write(("Show Cards In"), font = ('Courier', 15, 'italic'), align="center")
             sleep(3)
             cd.undo()
             sleep(1)
