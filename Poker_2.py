@@ -8,6 +8,7 @@ chip = 10000
 chip1 = 10000
 pot = 0
 got = 0
+some = (1/3)
 wn = turtle.Screen()
 wn.setup(1150, 1100)
 cd = turtle.Turtle()
@@ -17,28 +18,26 @@ cd.pensize(3)
 cd.penup()
 imports = {0:"Functions", 1:"Cards", 2:"Methods", 3:"Other Data"}
 importtime = [6, 9, 12]
-cd.goto(0, 0)
+cd.write("A Poker Game by Sanvik Vangala", font = ('Courier', 35, 'italic'), align="center")
+sleep(4)
+cd.undo()
 for vd1 in range(4):
     for variable in range(choice(importtime)):
         vd = variable%3
         if vd == 0:
-            cd.write("Importing " + imports[vd1] + ".", font = ('Courier', 35, 'italic'), align="center")
-            sleep(.3)
+            cd.write("Accessing " + imports[vd1] + ".", font = ('Courier', 35, 'italic'), align="center")
+            sleep(some)
             cd.undo()
         elif vd == 1:
-            cd.write("Importing " + imports[vd1] + "..", font = ('Courier', 35, 'italic'), align="center")
-            sleep(.3)
+            cd.write("Accessing " + imports[vd1] + "..", font = ('Courier', 35, 'italic'), align="center")
+            sleep(some)
             cd.undo()
         elif vd == 2:
-            cd.write("Importing " + imports[vd1] + "...", font = ('Courier', 35, 'italic'), align="center")
-            sleep(.3)
+            cd.write("Accessing " + imports[vd1] + "...", font = ('Courier', 35, 'italic'), align="center")
+            sleep(some)
             cd.undo()
-cd.write("A Poker Game by Sanvik Vangala", font = ('Courier', 35, 'italic'), align="center")
-sleep(4)
-cd.undo()
 while True:
     while True:
-        cd.goto(-240, -100)  
         pot = 0
         cardS = turtle.Turtle()
         cardS.hideturtle()
@@ -652,6 +651,12 @@ while True:
             ra2 = randint(1,5)
             ra3 = randint(1,5)
             ra4 = randint(1,5)
+            cd = turtle.Turtle()
+            cd.hideturtle()
+            cd.speed(0)
+            cd.pensize(3)
+            cd.penup()
+            cd.goto(0, 0)
             cd.forward(-200)
             cd.right(90)
             cd.penup()
@@ -1278,18 +1283,18 @@ while True:
             cd.goto(-240, -100)
             for variable in range(12):
                     if variable % 3 == 0:
-                        cd.write("Game Over. Restarting.", font = ('Courier', 15, 'italic'), align="center")
-                        sleep(.3)
+                        cd.write("Game Over. Accessing Game Data.", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(some)
                         cd.undo()
                     elif variable % 3 == 1:
-                        cd.write("Game Over. Restarting..", font = ('Courier', 15, 'italic'), align="center")
-                        sleep(.3)
+                        cd.write("Game Over. Accessing Game Data..", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(some)
                         cd.undo()
                     elif variable % 3 == 2:
-                        cd.write("Game Over. Restarting...", font = ('Courier', 15, 'italic'), align="center")
-                        sleep(.3)
+                        cd.write("Game Over. Accessing Game Data...", font = ('Courier', 15, 'italic'), align="center")
+                        sleep(some)
                         cd.undo()
-            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+            break
         else:
             wn.clear()
 
@@ -1385,15 +1390,15 @@ while True:
         cd.goto(-240, -100)
         for variable in range(12):
             if variable % 3 == 0:
-                cd.write("Game Over. Restarting.", font = ('Courier', 15, 'italic'), align="center")
+                cd.write("Game Over. Accessing Game Data.", font = ('Courier', 15, 'italic'), align="center")
                 sleep(.3)
                 cd.undo()
             elif variable % 3 == 1:
-                cd.write("Game Over. Restarting..", font = ('Courier', 15, 'italic'), align="center")
+                cd.write("Game Over. Accessing Game Data..", font = ('Courier', 15, 'italic'), align="center")
                 sleep(.3)
                 cd.undo()
             elif variable % 3 == 2:
-                cd.write("Game Over. Restarting...", font = ('Courier', 15, 'italic'), align="center")
+                cd.write("Game Over. Accessing Game Data...", font = ('Courier', 15, 'italic'), align="center")
                 sleep(.3)
                 cd.undo()
         pot = 0
