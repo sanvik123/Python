@@ -1,6 +1,7 @@
 import sys
 import turtle
 from time import sleep
+from random import choice
 from random import randint
 import os
 chip = 10000
@@ -9,8 +10,35 @@ pot = 0
 got = 0
 wn = turtle.Screen()
 wn.setup(1150, 1100)
+cd = turtle.Turtle()
+cd.hideturtle()
+cd.speed(0)
+cd.pensize(3)
+cd.penup()
+imports = {0:"Functions", 1:"Cards", 2:"Methods", 3:"Other Data"}
+importtime = [6, 9, 12]
+cd.goto(0, 0)
+for vd1 in range(4):
+    for variable in range(choice(importtime)):
+        vd = variable%3
+        if vd == 0:
+            cd.write("Importing " + imports[vd1] + ".", font = ('Courier', 35, 'italic'), align="center")
+            sleep(.3)
+            cd.undo()
+        elif vd == 1:
+            cd.write("Importing " + imports[vd1] + "..", font = ('Courier', 35, 'italic'), align="center")
+            sleep(.3)
+            cd.undo()
+        elif vd == 2:
+            cd.write("Importing " + imports[vd1] + "...", font = ('Courier', 35, 'italic'), align="center")
+            sleep(.3)
+            cd.undo()
+cd.write("A Poker Game by Sanvik Vangala", font = ('Courier', 35, 'italic'), align="center")
+sleep(4)
+cd.undo()
 while True:
-    while True:  
+    while True:
+        cd.goto(-240, -100)  
         pot = 0
         cardS = turtle.Turtle()
         cardS.hideturtle()
@@ -624,11 +652,6 @@ while True:
             ra2 = randint(1,5)
             ra3 = randint(1,5)
             ra4 = randint(1,5)
-            cd = turtle.Turtle()
-            cd.hideturtle()
-            cd.speed(0)
-            cd.pensize(3)
-            cd.penup()
             cd.forward(-200)
             cd.right(90)
             cd.penup()
