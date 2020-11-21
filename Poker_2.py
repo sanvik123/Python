@@ -45,8 +45,17 @@ fd.forward(15)
 fd.right(-180)
 fd.forward(7.5)
 fd.right(90)
-fd.pensize(5)
+fd.pensize(10)
 fd.speed(0)
+fd.pendown()
+fd.color("red")
+fd.forward(200)
+fd.penup()
+fd.right(180)
+fd.forward(200)
+fd.right(180)
+fd.pendown()
+fd.color("lime green")
 bd = 0
 for vd1 in range(4):
     xd = choice(importtime)
@@ -75,6 +84,25 @@ for vd1 in range(4):
             fd.forward(200/(4*xd))
             cd.undo()
 wn.clear()
+nd = turtle.Turtle()
+nd1 = turtle.Turtle()
+nd2 = turtle.Turtle()
+nd.penup()
+nd.hideturtle()
+nd.forward(300)
+nd1.penup()
+nd1.hideturtle()
+nd1.forward(300)
+nd2.penup()
+nd2.hideturtle()
+nd2.forward(300)
+nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+nd1.left(90)
+nd2.left(90)
+nd1.forward(50)
+nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+nd2.forward(-50)
+nd2.write("Oppenent Chips = {chip1}".format(chip1 = chip), font = ('Courier', 15, 'italic'), align="center")
 while True:
     while True:
         pot = 0
@@ -88,12 +116,18 @@ while True:
         cardS.undo()
         cardS.write(("Entree fee of 50"), font = ('Courier', 20, 'italic'), align="center")
         sleep(2)
-        t11 = turtle.textinput("Choice", "Do you want to play?    ")
+        t11 = turtle.textinput("Choice", "Do you want to play?  y/n for all questions and numbers for bets  ")
         cardS.undo() 
         if t11 == ('yes') or t11 == ('y'):
             chip -= 50
             chip1-= 50
-            pot += 100 
+            pot += 100
+            nd.undo()
+            nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+            nd1.undo()
+            nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+            nd2.undo()
+            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center") 
             print("Your balance is", chip)
             import itertools
             import random
@@ -874,6 +908,10 @@ while True:
                 cd.undo()
                 chip -= bett
                 pot += bett
+                nd.undo()
+                nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                nd1.undo()
+                nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
                 wn.listen(timer, "p")
                 wn.listen(quit, "q")
                 if chip < 0:
@@ -889,7 +927,7 @@ while True:
                 cd.goto(-240, -100)
                 wn.listen(timer, "p")
                 wn.listen(quit, "q")
-                if (not((((bett<200) and p1 > 2) or ((bett>200 and bett<500) and p1 > 5) or ((bett>500 and bett<1000) and p1 > 10) or (((bett>1000) and bett<5000 )and p1 > 20)or ((bett>5000) and p1 > 30)))) and ra1 < 3:
+                if ((not((((bett<200) and p1 > 2) or ((bett>200 and bett<500) and p1 > 5) or ((bett>500 and bett<1000) and p1 > 10) or (((bett>1000) and bett<5000 )and p1 > 20)or ((bett>5000) and p1 > 30)))) and ra1 < 3) or (bett>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -900,6 +938,10 @@ while True:
                 else:
                     chip1 -= bett
                     pot += bett
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -917,6 +959,10 @@ while True:
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -937,6 +983,12 @@ while True:
                     pot += ((int(p1)+1)*100)
                     chip -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     cd.goto(-240, -100)
                     if chip < 0:
                         cd.write(("Your have lost"), font = ('Courier', 15, 'italic'), align="center")
@@ -1016,6 +1068,10 @@ while True:
                 bett1 = int(bet1)
                 chip -= bett1
                 pot += bett1
+                nd.undo()
+                nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                nd1.undo()
+                nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
                 cd.goto(-240, -100)
                 if chip < 0:
                     cd.write(("You have lost"), font = ('Courier', 15, 'italic'), align="center")
@@ -1026,7 +1082,7 @@ while True:
                     got = 0
                     break
                 print("Your balance is", chip)
-                if (not((((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 10) or (((bett1>1000) and bett1<5000 )and p1 > 20)or ((bett1>5000) and p1 > 30)))) and ra12 < 3:
+                if ((not((((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 10) or (((bett1>1000) and bett1<5000 )and p1 > 20)or ((bett1>5000) and p1 > 30)))) and ra12 < 3) or (bett1>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1036,6 +1092,10 @@ while True:
                 else:
                     chip1 -= bett1
                     pot += bett1
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 <= 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1051,6 +1111,10 @@ while True:
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1070,6 +1134,12 @@ while True:
                     pot += ((int(p1)+1)*100)
                     chip -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip < 0:
                         cd.write(("You have lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1149,6 +1219,10 @@ while True:
                 bett2 = int(bet2)
                 chip -= bett2
                 pot += bett2
+                nd.undo()
+                nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                nd1.undo()
+                nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
                 if chip < 0:
                     cd.write('You have lost', font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
@@ -1159,7 +1233,7 @@ while True:
                 cd.write('Your balance is {some5}'.format(some5 = chip), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
-                if (not((((bett2<200) and p1 > 2) or ((bett2>200 and bett2<500) and p1 > 5) or ((bett2>500 and bett2<1000) and p1 > 10) or (((bett2>1000) and bett2<5000 )and p1 > 20)or ((bett2>5000) and p1 > 30)))) and ra13 < 3:
+                if ((not((((bett2<200) and p1 > 2) or ((bett2>200 and bett2<500) and p1 > 5) or ((bett2>500 and bett2<1000) and p1 > 10) or (((bett2>1000) and bett2<5000 )and p1 > 20)or ((bett2>5000) and p1 > 30)))) and ra13 < 3) or (bett2>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1169,6 +1243,10 @@ while True:
                 else:
                     chip1 -= bett2
                     pot += bett2
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1184,6 +1262,10 @@ while True:
                 if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
                     chip1 -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip1 < 0:
                         cd.write(("Your opponent has lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1202,6 +1284,12 @@ while True:
                     pot += ((int(p1)+1)*100)
                     chip -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     if chip < 0:
                         cd.write(("You have lost"), font = ('Courier', 15, 'italic'), align="center")
                         sleep(2)
@@ -1332,15 +1420,36 @@ while True:
                     print("Your opponents balance is", chip1, p1,p2)
                     chip += pot/2
                     chip1 = pot/2
+                    pot = 0
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     wn.clear()
                 elif (max([j, q]) > max([g, h])):
                     chip += pot
+                    pot = 0
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
                     wn.clear()
                 else:
                     chip1 += pot
+                    pot = 0
+                    nd.undo()
+                    nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+                    nd1.undo()
+                    nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+                    nd2.undo()
+                    nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
                     cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(4)
                     cd.undo()
@@ -1442,12 +1551,26 @@ while True:
         sleep(1)           
         if ct == 1:
             chip += pot
+            pot = 0
+            nd.undo()
+            nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+            nd1.undo()
+            nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+            nd2.undo()
+            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
             cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
             wn.clear()
         elif ct1 == 1:
             chip1 += pot
+            pot = 0
+            nd.undo()
+            nd.write("Pot = {Pot}".format(Pot = pot), font = ('Courier', 15, 'italic'), align="center")
+            nd1.undo()
+            nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
+            nd2.undo()
+            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
             cd.write(("\n\n\n      The computer wins {p1}, {p2}.\n\n\n      Your opponents balance\n    is {win}. Your balance\n    is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
@@ -1466,7 +1589,6 @@ while True:
                 cd.write("Game Over. Loading Game Data...", font = ('Courier', 15, 'italic'), align="center")
                 sleep(.3)
                 cd.undo()
-        pot = 0
         if chip <= 0:
             break
         if chip1 <= 0:
