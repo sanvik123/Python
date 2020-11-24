@@ -27,6 +27,7 @@ class Card:
         board.pencolor(color)
         board.pensize(size)
         board.setheading(0)
+        
         board.up()
         board.goto(x,y)
         board.down()
@@ -140,10 +141,34 @@ fd.right(180)
 fd.pendown()
 fd.color("lime green")
 bd = 0
+jk1 = #randint(1, 100)
 for vd1 in range(4):
     xd = choice(importtime)
     for variable in range(xd):
         vd = variable%3
+        if (jk1 == 55) and (variable == 4) and (vd1 == 3):
+            wn.clear()
+            jk = turtle.Turtle()
+            jk.hideturtle()
+            jk.penup()
+            jk.write("Sorry, We had a problem\n accessing the data required.", font = ('Courier', 25, 'italic'), align="center")
+            sleep(3)
+            jk.undo()
+            for vd2 in range(9):
+                vf = vd2%3
+                if vf == 0:
+                    jk.write("Restarting.", font = ('Courier', 35, 'italic'), align="center")
+                    sleep(some)
+                    jk.undo()
+                if vf == 1:
+                    jk.write("Restarting..", font = ('Courier', 35, 'italic'), align="center")
+                    sleep(some)
+                    jk.undo()
+                if vf == 2:
+                    jk.write("Restarting...", font = ('Courier', 35, 'italic'), align="center")
+                    sleep(some)
+                    jk.undo()
+            break
         if (vd1 == 3) and (variable == 2):
             bd = 1
         if vd == 0:
@@ -752,6 +777,8 @@ while True:
                         p2 += max([j, q])/100
             highcard()
             highcard2()
+
+
             c6 = 0
             c7 = 0
             c8 = 0
