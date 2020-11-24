@@ -27,7 +27,6 @@ class Card:
         board.pencolor(color)
         board.pensize(size)
         board.setheading(0)
-        
         board.up()
         board.goto(x,y)
         board.down()
