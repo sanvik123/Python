@@ -5,6 +5,7 @@ from random import randint
 from random import choice
 from time import sleep
 import turtle
+import os
 chip = 10000
 chip1 = 10000
 pot = 0
@@ -15,35 +16,9 @@ SUIT_NUMBERS = {'Ace': 'A', '2':'2', '3': '3', '4': '4', '5': '5', '6': '6', '7'
 SUIT_RANK = {'Ace': 14, '2':2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'Jack': 11, 'Queen': 12, 'King': 13}
 SUIT = {'Spades':chr(9824), 'Diamonds':chr(9830), 'Hearts':chr(9829), 'Clovers':chr(9827)}
 SUIT_COLOR = {'Spades':"black", 'Diamonds':"blue", 'Hearts':"red", 'Clovers':"green"}
-
-
 class Card:
-
     def displaySymbol(self, turtleCard, displayStr, size, alignStr):
         turtleCard.write("{suit}".format( suit = displayStr), font = ('Courier', size, 'italic'), align=alignStr)
-
-    # draws a rectangle given top left position of a rectangle
-    def draw_rectangle(self, board,x,y,width,height,size,color):
-        board.pencolor(color)
-        board.pensize(size)
-        board.setheading(0)
-        
-        board.up()
-        board.goto(x,y)
-        board.down()
-        # draw top
-        board.forward(width)
-        # draw right
-        board.right(90)
-        board.forward(height)
-        # draw bottom
-        board.right(90)
-        board.forward(width)
-        # draw left
-        board.right(90)
-        board.forward(height)
-        board.end_fill()
-  
     def __init__(self, suiter, turtleCard, x, y):
         self.number = SUIT_NUMBERS[suiter[0]]
         self.rank = SUIT_RANK[suiter[0]]
@@ -95,6 +70,7 @@ class Card:
         turtleCard.color("black")
 wn = turtle.Screen()
 wn.setup(1150, 1100)
+wn.title("Poker")
 cd = turtle.Turtle()
 cd.hideturtle()
 cd.speed(0)
@@ -141,7 +117,7 @@ fd.right(180)
 fd.pendown()
 fd.color("lime green")
 bd = 0
-jk1 = #randint(1, 100)
+jk1 = randint(1, 1000)
 for vd1 in range(4):
     xd = choice(importtime)
     for variable in range(xd):
@@ -168,7 +144,7 @@ for vd1 in range(4):
                     jk.write("Restarting...", font = ('Courier', 35, 'italic'), align="center")
                     sleep(some)
                     jk.undo()
-            break
+            os.execl(sys.executable, sys.executable, *sys.argv)
         if (vd1 == 3) and (variable == 2):
             bd = 1
         if vd == 0:
@@ -191,6 +167,7 @@ for vd1 in range(4):
             sleep(some)
             fd.forward(200/(4*xd))
             cd.undo()
+
 sleep(1)
 wn.clear()
 md = turtle.Turtle()
@@ -1192,6 +1169,7 @@ while True:
             cd.write((1), font = ('Courier', 15, 'italic'), align="center")
             sleep(1)
             cd.undo()
+            mcard.undo()
             card0.__init__(comp1, turtleCard, -50, 350)
             card0.__init__(comp2, turtleCard, 25, 350)
             sleep(1)
