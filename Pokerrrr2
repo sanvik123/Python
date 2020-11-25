@@ -516,7 +516,7 @@ while True:
                 global count12
                 global count10
                 if count12 == 0:
-                    if (((j == m) or (j == n) or (j == s)or (j == f)or (j == v)or (j == q)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))or((n == m) and (n == s))or((n == m) and (n == f))or((n == m) and (n == v))or((n == s) and (n == f))or((n == s) and (n == v))or((n == f) and (n == v))):
+                    if (((j == m) or (j == n) or (j == s)or (j == f)or (j == v)or (j == q)or (n == s)or (m == n)or (m == s)or (m == f)or (m == v)or (n == f)or (n == v)or (s == f)or (s == v)or (f == v))and(((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))or((n == m) and (n == s))or((n == m) and (n == f))or((n == m) and (n == v))or((n == s) and (n == f))or((n == s) and (n == v))or((n == f) and (n == v)))):
                         p2 += 30
                         p2 += j/100
                         count10 = 1
@@ -606,11 +606,11 @@ while True:
                 global count4
                 global count2
                 if count4 == 0:
-                    if (((j == q) and (j == m))or((j == q) and (j == n))or((j == q) and (j == s))or((j == q) and (j == f))or((j == q) and (j == v))or((j == m) and (j == n))or((j == m) and (j == s))or((j == m) and (j == f))or((j == m) and (j == v))or((j == n) and (j == s))or((j == n) and (j == f))or((j == n) and (j == v))or((j == s) and (j == f))or((j == s) and (j == v))or((j == f) and (j == v))):
+                    if suit1.count(j)==3:
                         p2 += 5
                         p2 += j/100
                         count2 = 1
-                    elif (((q == m) and (q == n))or((q == m) and (q == s))or((q == m) and (q == f))or((q == m) and (q == v))or((q == n) and (q == s))or((q == n) and (q == f))or((q == n) and (q == v))or((q == s) and (q == f))or((q == s) and (q == v))or((q == f) and (q == v))):
+                    elif suit2.count(h)==3:
                         p2 += 5
                         p2 += q/100
                         count2 = 1
@@ -621,11 +621,11 @@ while True:
                 global count3
                 global count5
                 if count5 == 0:
-                    if (((g == h) and (g == m))or((g == h) and (g == n))or((g == h) and (g == s))or((g == h) and (g == f))or((g == h) and (g == v))or((g == m) and (g == n))or((g == m) and (g == s))or((g == m) and (g == f))or((g == m) and (g == v))or((g == n) and (g == s))or((g == n) and (g == f))or((g == n) and (g == v))or((g == s) and (g == f))or((g == s) and (g == v))or((g == f) and (g == v))):
+                    if suit2.count(g) == 3:
                         p1 += 5
                         p1 += g/100
                         count3 = 1
-                    elif (((h == m) and (h == n))or((h == m) and (h == s))or((h == m) and (h == f))or((h == m) and (h == v))or((h == n) and (h == s))or((h == n) and (h == f))or((h == n) and (h == v))or((h == s) and (h == f))or((h == s) and (h == v))or((h == f) and (h == v))):
+                    elif suit2.count(h) == 3:
                         p1 += 5
                         p1 += h/100
                         count3 = 1
