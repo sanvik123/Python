@@ -1,0 +1,178 @@
+ct2 = 0
+od = 0
+for ture in range(50):
+    import turtle
+    from random import randint
+    from time import sleep
+    import os
+    import sys
+    from time import sleep
+    h = turtle.Turtle()
+    h.color("orange")
+    h.shape("circle")
+    h.hideturtle()
+    h.penup()
+    width, height = 600, 600
+    FONT = ("Arial", 44, "normal")
+    wn = turtle.Screen()
+    myScore = 0
+    e = turtle.Turtle()
+    e.penup()
+    e.speed(0)
+    e.right(180)
+    e.forward(550)
+    e.shape("circle")
+    e.color("blue")
+    e.turtlesize(30)
+    run = turtle.Turtle()
+    run.penup()
+    run.speed(0)
+    run.hideturtle()
+    run.backward(10)
+    run.left(-90)
+    run.forward(200)
+    l = turtle.Turtle()
+    l.penup()
+    l.speed(0)
+    l.right(180)
+    l.forward(450)
+    l.right(90)
+    l.forward(100)
+    l.shape("circle")
+    l.color("green")
+    l.turtlesize(14)
+    s = turtle.Turtle()
+    s.penup()
+    s.speed(0)
+    s.hideturtle()
+    s.backward(10)
+    s.left(90)
+    s.forward(200)
+    s.write(myScore, font=FONT)
+    wn.setup(width+100, height+100)
+    ball = turtle.Turtle()
+    ball.shape("circle")
+    ball.penup()
+    ball.speed(0)
+    ball.backward(200)
+    ball.right(-90)
+    ball.turtlesize(.5)
+    def c(t, t2):
+        collide = abs(t.xcor() - t2.xcor()) < 10 and abs(t.ycor() - t2.ycor()) < 10
+        if collide:
+            t2.hideturtle()
+            return collide
+    i = 0
+    def rock_maker(t):
+        global myScore
+        global i
+        i+=1
+        if i == 1:
+            t.speed(0)
+            t.hideturtle()
+            t.penup()
+            t.backward(75)
+            t.right(-90)
+            t.forward(250)
+        myRock = turtle.Turtle()
+        myRock.hideturtle()
+        myRock.shape('circle')
+        myRock.penup()
+        myRock.speed(0)
+        myRock.forward(300)
+        x = randint(-200, 200)
+        y = randint(1, 2)
+        if y == 1:
+            myRock.right(90)
+        if y == 2:
+            myRock.left(90)
+        myRock.forward(x)
+        if y == 1:
+            myRock.right(-90)
+        if y == 2:
+            myRock.left(-90)
+        myRock.showturtle()
+        while True:
+            myRock.backward(4.5)
+            c(ball, myRock)
+            x, y = myRock.pos()
+            if not -width / 2 < x < width / 2 or not -height / 2 < y < height / 2:
+                t.write("You lose!", font=FONT)
+                h.goto(myRock.xcor(), myRock.ycor())
+                od = 1
+                h.showturtle()
+                for md in range(50):
+                    h.turtlesize(od)
+                    od+=.3
+                    sleep(.05)
+                sleep(1)
+                os.execl(sys.executable, os.path.abspath(__file__), *sys.argv) 
+            if c(ball, myRock):
+                myScore += 1
+                s.undo()
+                s.write(myScore, font=FONT)
+                if myScore == 30:
+                    t.write("You win!", font=FONT)
+                    ct2 = 1
+                    sleep(3)
+                    wn.bye()
+                    break
+                break
+            if c(ball, myRock):
+                break
+            wn.onkey(up, 'Up')
+            wn.onkey(down, 'Down')
+            wn.onkey(quit, 'q')
+            wn.onkey(pause, 'p')
+            wn.onkey(reset, 's')
+            wn.listen()
+    turt = turtle.Turtle()
+    turt.hideturtle()
+    turt.penup()
+    turt.speed(0)
+    turt.right(-90)
+    turt.forward(250)
+    turt.right(-90)
+    turt.forward(300)
+    turt.write("PROTECT EARTH!!!", font = ("Arial", 20, "normal"))
+    turt.right(-180)
+    turt.forward(500)
+    def up():
+        ball.forward(25)
+    def down():
+        ball.backward(25)
+    def quit():
+        wn.bye()
+    def reset():
+        tess.undo()
+        score = 0
+        tess.write(score, font=FONT)
+    def pause():
+        i = 20#int(input("enter number"))
+        c = 0
+        while True:
+            sleep(1)
+            i -= 1
+            if c > 0:
+                turt.undo()
+            c += 1
+            turt.write(i, font = FONT)
+            if i == 0:
+                break
+    tess = turtle.Turtle()
+    for o in range(30):
+        rock_maker(tess)
+    ball.speed(0)
+    wn.onkey(reset, 'Space')
+    wn.onkey(up, 'Up')
+    wn.onkey(down, 'Down')
+    wn.onkey(quit, 'q')
+    wn.onkey(pause, 'p')
+    wn.listen()
+    ct1 = 0
+    if ture == 50:
+        ct1 = 1
+        break
+wn.mainloop()
+if ct1 == 0 or ct2 == 1:
+    run.write("You Win!", font=FONT)
