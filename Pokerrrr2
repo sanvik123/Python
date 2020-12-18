@@ -11,7 +11,6 @@ chip1 = 10000
 pot = 0
 got = 0
 some = (1/10)
-print("Your balance is", chip)
 SUIT_NUMBERS = {'Ace': 'A', '2':'2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9', '10': '10', 'Jack': 'J', 'Queen': 'Q', 'King': 'K'}
 SUIT_RANK = {'Ace': 14, '2':2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'Jack': 11, 'Queen': 12, 'King': 13}
 SUIT = {'Spades':chr(9824), 'Diamonds':chr(9830), 'Hearts':chr(9829), 'Clovers':chr(9827)}
@@ -151,7 +150,7 @@ for vd1 in range(4):
             cd.write("Accessing " + imports[vd1] + ".", font = ('Courier', 35, 'italic'), align="center")
             sleep(some)
             if bd == 1:
-                sleep(.5)
+                sleep(1)
                 fd.forward(200/(4*xd))
             else:
                 fd.forward(200/(4*xd))
