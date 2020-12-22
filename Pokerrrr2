@@ -6,6 +6,9 @@ from random import choice
 from time import sleep
 import turtle
 import os
+wn = turtle.Screen()
+wn.setup(1150, 1100)
+wn.title("Poker")
 chip = 10000
 chip1 = 10000
 pot = 0
@@ -67,9 +70,6 @@ class Card:
         self.displaySymbol(turtleCard,self.number, 50,"center")
         #turtleCard.write("{suit}".format( suit = (SUIT_NUMBERS[suiter[0]])), font = ('Courier', 50, 'italic'), align="center")
         turtleCard.color("black")
-wn = turtle.Screen()
-wn.setup(1150, 1100)
-wn.title("Poker")
 cd = turtle.Turtle()
 cd.hideturtle()
 cd.speed(0)
