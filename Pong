@@ -1,0 +1,164 @@
+import turtle
+from random import randint, choice
+from time import sleep
+import os
+court_width = 600
+court_height = 600
+score = 0
+score1 = 0
+window = turtle.Screen()
+width, height = 800, 700
+window.setup(width, height)
+border = turtle.Turtle()
+border.hideturtle()
+border.speed(0)
+border.pendown()
+border.right(-90)
+border.forward(290)
+border.right(90)
+border.forward(320)
+border.right(180)
+border.forward(620)
+border.right(180)
+border.forward(300)
+border.right(-90)
+border.forward(40)
+border.right(-180)
+border.forward(620)
+border.right(-90)
+border.forward(320)
+border.right(-90)
+border.forward(620)
+border.right(-90)
+border.forward(620)
+border.right(-90)
+border.forward(620)
+border.right(-90)
+border.forward(620)
+cursor_size = 20
+player_height = 60
+player_width = 20
+FONT = ("Arial", 44, "normal")
+ballspeed = 8
+paddle1 = turtle.Turtle()
+paddle2 = turtle.Turtle()
+ball = turtle.Turtle()
+window.register_shape("rect.gif")
+paddle1.shape("rect.gif")
+paddle1.penup()
+paddle1.speed(0)
+paddle1.backward(-250)
+paddle1.right(90)
+paddle2.shape("rect.gif")
+paddle2.penup()
+paddle2.speed(0)
+paddle2.backward(250)
+paddle2.right(90)
+ball.penup()
+ball.speed(0)
+ball.shape("circle")
+ball.right(-90)
+ball.forward(200)
+ball.right(180)
+ball.forward(200)
+ball.right(90)
+ball.speed(5)
+def b():
+    x, y = paddle1.pos()
+    if not -(width-150) / 2 < x < (width-150) / 2 or not -(height-150) / 2 < y < (height-150) / 2:
+        paddle1.undo()
+def a():
+    a, b = paddle2.pos()
+    if not -(width-150) / 2 < a < (width-150) / 2 or not -(height-150) / 2 < b < (height-150) / 2:
+        paddle2.undo()
+def up_1():
+    paddle1.forward(50)
+    b()
+def down_1():
+    paddle1.backward(50)
+    b()
+def up_2():
+    paddle2.forward(50)
+    a()
+def down_2():
+    paddle2.backward(50)
+    a()
+def quit():
+    window.bye()
+def reset_ball():
+    ball.setposition(0, 0)
+    ball.setheading(choice([0, 180]) + randint(-60, 60))
+def distance(t1, t2):
+    my_distance = t1.distance(t2)
+    if my_distance < player_height/2:
+        t2.setheading(180 - t2.heading())
+        t2.forward(8)
+def move():
+    global score, score1
+    ball.forward(8)
+    x, y = ball.position()
+    if x > court_width/2 + cursor_size: 
+        score1 += 1
+        s1.undo()
+        s1.write(score1, font=FONT)
+        reset_ball()
+        if score1 == 10:
+            ball.write("Left team wins.", font = ("Arial", 30, "normal"))
+            os.system('say "Left team wins."')
+            sleep(3)
+            window.bye()
+    elif x < cursor_size - court_width/2:
+        score += 1
+        s.undo()
+        s.write(score, font=FONT)
+        reset_ball()
+        if score == 10:
+            ball.write("Right team wins.", font = ("Arial", 30, "normal"))
+            os.system('say "Right team wins."')
+            sleep(3)
+            window.bye()
+        window.listen()
+    elif y > court_height/2 - cursor_size or y < cursor_size - court_height/2:
+        ball.setheading(-ball.heading())
+    else:
+        distance(paddle1, ball)
+        distance(paddle2, ball)
+    if window.onkey(resetgame, "space"):
+        score = score - (score - 1)
+        score1 = score1 - (score1 - 1)
+    window.ontimer(move, 20)
+s1 = turtle.Turtle()
+s1.hideturtle()
+s1.speed("fastest")
+s1.color("black")
+s1.penup()
+s1.setposition(-court_width/4, 285)
+s1.write(score1, font=FONT)
+s = turtle.Turtle()
+s.hideturtle()
+s.speed("fastest")
+s.color("black")
+s.penup()
+s.setposition(court_width/4, 285)
+s.write(score, font=FONT)
+def resetgame():
+    reset_ball()
+    score = 0
+    score1 = 0
+    s1.undo()
+    s1.write(score1, font=FONT)
+    s.undo()
+    s.write(score, font=FONT)
+def pause():
+    sleep(59)
+window.onkey(up_1, "Down")
+window.onkey(down_1, "Up")
+window.onkey(quit, "q")
+window.onkey(up_2, "z")
+window.onkey(down_2, "s")
+window.onkey(reset_ball, "r")
+window.onkey(resetgame, "space")
+window.onkey(pause, "p")
+window.listen()
+move()
+window.mainloop()
