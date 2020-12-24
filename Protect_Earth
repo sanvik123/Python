@@ -7,6 +7,7 @@ for ture in range(50):
     import os
     import sys
     from time import sleep
+    import time
     h = turtle.Turtle()
     h.color("orange")
     h.shape("circle")
@@ -101,7 +102,15 @@ for ture in range(50):
                 h.goto(myRock.xcor(), myRock.ycor())
                 od = 1
                 h.showturtle()
+                something = turtle.Turtle()
+                something.penup()
+                something.speed(0)
+                something.goto(myRock.xcor(), myRock.ycor())
+                something.color("red")
+                something.shape("circle")
                 for md in range(50):
+                    if od > 10:
+                        something.shapesize(od - 9.7)
                     h.turtlesize(od)
                     od+=.3
                     sleep(.05)
@@ -138,9 +147,9 @@ for ture in range(50):
     turt.right(-180)
     turt.forward(500)
     def up():
-        ball.forward(25)
+        ball.forward(20)
     def down():
-        ball.backward(25)
+        ball.backward(20)
     def quit():
         wn.bye()
     def reset():
