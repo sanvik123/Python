@@ -1,0 +1,14 @@
+import turtle
+wn = turtle.Screen()
+t = turtle.Turtle()
+wn.setup(1000, 1000)
+def point_A(x, y):
+    t.penup()
+    t.goto(x,y)
+    wn.onclick(point_B)
+def point_B(x,y):
+    t.pendown()
+    t.goto(x,y)
+    wn.onclick(point_A)
+wn.onclick(point_A)
+wn.mainloop()
