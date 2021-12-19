@@ -59,10 +59,10 @@ class Card:
         turtleCard.forward(23)
         turtleCard.right(-90)
         self.displaySymbol(turtleCard, self.suitSymbol, 24,"left")
-        turtleCard.forward(10)        
-        turtleCard.forward(36)        
+        turtleCard.forward(10)
+        turtleCard.forward(36)
         self.displaySymbol(turtleCard, self.suitSymbol, 24,"left")
-        turtleCard.forward(-40) 
+        turtleCard.forward(-40)
         turtleCard.right(90)
         turtleCard.forward(50)
         turtleCard.right(-90)
@@ -208,7 +208,7 @@ while True:
         cardS.write(("Entree fee of 50"), font = ('Courier', 20, 'italic'), align="center")
         sleep(2)
         t11 = turtle.textinput("Choice", "Do you want to play?  y/n for all questions and numbers for bets  ")
-        cardS.undo() 
+        cardS.undo()
         if t11 == ('yes') or t11 == ('y'):
             chip -= 50
             chip1-= 50
@@ -218,7 +218,7 @@ while True:
             nd1.undo()
             nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
             nd2.undo()
-            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center") 
+            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
             print("Your balance is", chip)
             import itertools
             import random
@@ -234,12 +234,12 @@ while True:
             check_error = 0
             comp1 = deck[c]
             comp2 = deck[d]
-            p = deck[0] 
-            o = deck[1] 
-            e = deck[5] 
-            l = deck[6] 
-            x = deck[7] 
-            u = deck[9] 
+            p = deck[0]
+            o = deck[1]
+            e = deck[5]
+            l = deck[6]
+            x = deck[7]
+            u = deck[9]
             z = deck[11]
             turtleCard = turtle.Turtle()
             turtleCard.hideturtle()
@@ -352,7 +352,7 @@ while True:
             p2 = 0
             t = 0
             k = 0
-            count = -1 
+            count = -1
             count1 = -1
             count2 = -1
             count3 = -1
@@ -774,7 +774,7 @@ while True:
             print("The first card on the table is a {RANK} of {SUIT}.".format(RANK = e[0], SUIT = e[1]))
             print("The second card on the table is a {RANK} of {SUIT}.".format(RANK = l[0], SUIT = l[1]))
             print("The third card on the table is a {RANK} of {SUIT}.".format(RANK = x[0], SUIT = x[1]))
-            sleep(3)          
+            sleep(3)
             def timer():
                     turt = turtle.Turtle()
                     turt.hideturtle()
@@ -783,7 +783,7 @@ while True:
                     turt.forward(50)
                     turt.left(90)
                     turt.forward(100)
-                    turt.write(10, font = ('Courier', 50, 'italic'), align="center") 
+                    turt.write(10, font = ('Courier', 50, 'italic'), align="center")
                     ui = 10
                     ci = 0
                     while True:
@@ -794,7 +794,7 @@ while True:
                         ci += 1
                         turt.write(ui, font = ('Courier', 50, 'italic'))
                         if ui == 0:
-                            break 
+                            break
             def quit():
                 wn.bye()
             wn.listen(timer, "p")
@@ -872,7 +872,7 @@ while True:
             wn.listen(quit, "q")
             if (p1 > 2) and ra2 > 3:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
+                if not (turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes')):
                     chip1 -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
                     nd.undo()
@@ -1104,9 +1104,9 @@ while True:
                     cd.write(("Your opponent called.\n Your opponents balance\n is {chip2}".format(chip2 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
                     cd.undo()
-            if (p1 > 2) and ra2 > 2:
+            if (p1 > 2) and ra2 > 3:
                 cd.goto(-240, -100)
-                if not turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes'):
+                if not (turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes')):
                     chip1 -= ((int(p1)+1)*100)
                     pot += ((int(p1)+1)*100)
                     nd.undo()
@@ -1254,7 +1254,7 @@ while True:
         card0.__init__(comp1, turtleCard, -50, 350)
         card0.__init__(comp2, turtleCard, 25, 350)
         cd.goto(-240, -100)
-        sleep(1)           
+        sleep(1)
         if ct == 1:
             chip += pot
             pot = 0
