@@ -641,23 +641,23 @@ while True:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    elif j == n:
+                    if j == n:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    elif j == s:
+                    if j == s:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    elif j == f:
+                    if j == f:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    elif j == v:
+                    if j == v:
                         p2 += 2
                         p2 += j/100
                         count = 1
-                    elif j == q:
+                    if j == q:
                         p2 += 2
                         p2 += j/100
                         count = 1
@@ -665,21 +665,61 @@ while True:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    elif q == n:
+                    if q == n:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    elif q == s:
+                    if q == s:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    elif q == f:
+                    if q == f:
                         p2 += 2
                         p2 += q/100
                         count = 1
-                    elif q == v:
+                    if q == v:
                         p2 += 2
                         p2 += q/100
+                        count = 1
+                    if m == n:
+                        p2 += 2
+                        p2 += m/100
+                        count = 1
+                    if m == s:
+                        p2 += 2
+                        p2 += m/100
+                        count = 1
+                    if m == f:
+                        p2 += 2
+                        p2 += m/100
+                        count = 1
+                    if m == v:
+                        p2 += 2
+                        p2 += m/100
+                        count = 1
+                    if n == s:
+                        p2 += 2
+                        p2 += n/100
+                        count = 1
+                    if n == f:
+                        p2 += 2
+                        p2 += n/100
+                        count = 1
+                    if n == v:
+                        p2 += 2
+                        p2 += n/100
+                        count = 1
+                    if s == f:
+                        p2 += 2
+                        p2 += s / 100
+                        count = 1
+                    if s == v:
+                        p2 += 2
+                        p2 += s / 100
+                        count = 1
+                    if f == v:
+                        p2 += 2
+                        p2 += f / 100
                         count = 1
                 else:
                     count = 0
@@ -691,45 +731,85 @@ while True:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif g == n:
+                    if g == n:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif g == s:
+                    if g == s:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif g == f:
+                    if g == f:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif g == v:
+                    if g == v:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif g == h:
+                    if g == h:
                         p1 += 2
                         p1 += g/100
                         count1 = 1
-                    elif h == m:
+                    if h == m:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    elif h == n:
+                    if h == n:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    elif h == s:
+                    if h == s:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    elif h == f:
+                    if h == f:
                         p1 += 2
                         p1 += h/100
                         count1 = 1
-                    elif h == v:
+                    if h == v:
                         p1 += 2
                         p1 += h/100
+                        count1 = 1
+                    if m == n:
+                        p1 += 2
+                        p1 += m/100
+                        count1 = 1
+                    if m == s:
+                        p1 += 2
+                        p1 += m/100
+                        count1 = 1
+                    if m == f:
+                        p1 += 2
+                        p1 += m/100
+                        count1 = 1
+                    if m == v:
+                        p1 += 2
+                        p1 += m/100
+                        count1 = 1
+                    if n == s:
+                        p1 += 2
+                        p1 += n/100
+                        count1 = 1
+                    if n == f:
+                        p1 += 2
+                        p1 += n/100
+                        count1 = 1
+                    if n == v:
+                        p1 += 2
+                        p1 += n/100
+                        count1 = 1
+                    if s == f:
+                        p1 += 2
+                        p1 += s / 100
+                        count1 = 1
+                    if s == v:
+                        p1 += 2
+                        p1 += s / 100
+                        count1 = 1
+                    if f == v:
+                        p1 += 2
+                        p1 += f / 100
                         count1 = 1
                 else:
                     count1 = 0
@@ -843,7 +923,7 @@ while True:
                 cd.goto(-240, -100)
                 wn.listen(timer, "p")
                 wn.listen(quit, "q")
-                if ((not((((bett<200) and p1 > 2) or ((bett>200 and bett<500) and p1 > 5) or ((bett>500 and bett<1000) and p1 > 10) or (((bett>1000) and bett<5000 )and p1 > 20)or ((bett>5000) and p1 > 30)))) and ra1 < 3) or (bett>chip1):
+                if ((not((((bett<200) and p1 > 2) or ((bett>=200 and bett<500) and p1 > 5) or ((bett>=500 and bett<1000) and p1 > 10) or (((bett>=1000) and bett<5000 )and p1 > 20)or ((bett>=5000) and p1 > 30))))) or (bett>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -870,7 +950,8 @@ while True:
                     cd.undo()
             wn.listen(timer, "p")
             wn.listen(quit, "q")
-            if (p1 > 2) and ra2 > 3:
+            ra32 = randint(1,5)
+            if (p1 > 2) and ra32 > 3:
                 cd.goto(-240, -100)
                 if not (turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes')):
                     chip1 -= ((int(p1)+1)*100)
@@ -964,7 +1045,7 @@ while True:
                     got = 0
                     break
                 print("Your balance is", chip)
-                if ((not((((bett1<200) and p1 > 2) or ((bett1>200 and bett1<500) and p1 > 5) or ((bett1>500 and bett1<1000) and p1 > 10) or (((bett1>1000) and bett1<5000 )and p1 > 20)or ((bett1>5000) and p1 > 30)))) and ra12 < 3) or (bett1>chip1):
+                if ((not((((bett1<200) and p1 > 2) or ((bett1>=200 and bett1<500) and p1 > 5) or ((bett1>=500 and bett1<1000) and p1 > 10) or (((bett1>=1000) and bett1<5000 )and p1 > 20)or ((bett1>=5000) and p1 > 30))))) or (bett1>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1048,7 +1129,6 @@ while True:
                 got = 0
                 break
             if turtle.textinput("Choice", "\nDo you want to bet? yes or no.\n") == ('y' or "yes"):
-                bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
                 while True:
                     try:
                         bet2 = turtle.textinput("Choice", "Enter the amount you want to bet.   ")
@@ -1080,7 +1160,7 @@ while True:
                 cd.write('Your balance is {some5}'.format(some5 = chip), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
-                if ((not((((bett2<200) and p1 > 2) or ((bett2>200 and bett2<500) and p1 > 5) or ((bett2>500 and bett2<1000) and p1 > 10) or (((bett2>1000) and bett2<5000 )and p1 > 20)or ((bett2>5000) and p1 > 30)))) and ra13 < 3) or (bett2>chip1):
+                if ((not ((((bett2 < 200) and p1 > 2) or ((bett2 >= 200 and bett2 < 500) and p1 > 5) or ((bett2>=500 and bett2<1000) and p1 > 10) or (((bett2>=1000) and bett2<5000 )and p1 > 20)or ((bett2>=5000) and p1 > 30))))) or (bett2>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1104,7 +1184,8 @@ while True:
                     cd.write(("Your opponent called.\n Your opponents balance\n is {chip2}".format(chip2 = chip1)), font = ('Courier', 15, 'italic'), align="center")
                     sleep(3)
                     cd.undo()
-            if (p1 > 2) and ra2 > 3:
+            ra33 = randint(1, 5)
+            if (p1 > 2) and ra33 > 3:
                 cd.goto(-240, -100)
                 if not (turtle.textinput("Choice", "Your opponent bet {bet}. Do you want to call? yes or no.   ".format(bet = (int(p1)+1)*100)) == ("y" or'yes')):
                     chip1 -= ((int(p1)+1)*100)
