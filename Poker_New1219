@@ -923,7 +923,7 @@ while True:
                 cd.goto(-240, -100)
                 wn.listen(timer, "p")
                 wn.listen(quit, "q")
-                if ((not((((bett<200) and p1 > 2) or ((bett>=200 and bett<500) and p1 > 5) or ((bett>=500 and bett<1000) and p1 > 10) or (((bett>=1000) and bett<5000 )and p1 > 20)or ((bett>=5000) and p1 > 30))))) or (bett>chip1):
+                if ((not((((bett<=200) and p1 > 2) or ((bett>200 and bett<=500) and p1 > 5) or ((bett>500 and bett<=1000) and p1 > 10) or (((bett>1000) and bett<=5000 )and p1 > 20)or ((bett>5000) and p1 > 30))))) or (bett>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1045,7 +1045,7 @@ while True:
                     got = 0
                     break
                 print("Your balance is", chip)
-                if ((not((((bett1<200) and p1 > 2) or ((bett1>=200 and bett1<500) and p1 > 5) or ((bett1>=500 and bett1<1000) and p1 > 10) or (((bett1>=1000) and bett1<5000 )and p1 > 20)or ((bett1>=5000) and p1 > 30))))) or (bett1>chip1):
+                if ((not((((bett1<=200) and p1 > 2) or ((bett1>200 and bett1<=500) and p1 > 5) or ((bett1>500 and bett1<=1000) and p1 > 10) or (((bett1>1000) and bett1<=5000 )and p1 > 20)or ((bett1>5000) and p1 > 30))))) or (bett1>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
@@ -1160,7 +1160,7 @@ while True:
                 cd.write('Your balance is {some5}'.format(some5 = chip), font = ('Courier', 15, 'italic'), align="center")
                 sleep(2)
                 cd.undo()
-                if ((not ((((bett2 < 200) and p1 > 2) or ((bett2 >= 200 and bett2 < 500) and p1 > 5) or ((bett2>=500 and bett2<1000) and p1 > 10) or (((bett2>=1000) and bett2<5000 )and p1 > 20)or ((bett2>=5000) and p1 > 30))))) or (bett2>chip1):
+                if ((not ((((bett2<= 200) and p1 > 2) or ((bett2 > 200 and bett2 <= 500) and p1 > 5) or ((bett2>500 and bett2<=1000) and p1 > 10) or (((bett2>1000) and bett2<=5000 )and p1 > 20)or ((bett2>5000) and p1 > 30))))) or (bett2>chip1):
                     cd.write(("Your opponent folded"), font = ('Courier', 15, 'italic'), align="center")
                     sleep(2)
                     cd.undo()
