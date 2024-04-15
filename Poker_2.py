@@ -57,32 +57,6 @@ fd.right(180)
 fd.pendown()
 fd.color("lime green")
 bd = 0
-for vd1 in range(4):
-    xd = choice(importtime)
-    for variable in range(xd):
-        vd = variable%3
-        if (vd1 == 3) and (variable == 2):
-            bd = 1
-        if vd == 0:
-            cd.write("Accessing " + imports[vd1] + ".", font = ('Courier', 35, 'italic'), align="center")
-            sleep(some)
-            if bd == 1:
-                sleep(3)
-                fd.forward(200/(4*xd))
-            else:
-                fd.forward(200/(4*xd))
-            cd.undo()
-            bd = 0
-        elif vd == 1:
-            cd.write("Accessing " + imports[vd1] + "..", font = ('Courier', 35, 'italic'), align="center")
-            sleep(some)
-            fd.forward(200/(4*xd))
-            cd.undo()
-        elif vd == 2:
-            cd.write("Accessing " + imports[vd1] + "...", font = ('Courier', 35, 'italic'), align="center")
-            sleep(some)
-            fd.forward(200/(4*xd))
-            cd.undo()
 sleep(1)
 wn.clear()
 nd = turtle.Turtle()
@@ -113,8 +87,9 @@ nd1.forward(50)
 nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
 nd2.forward(-50)
 nd2.write("Oppenent Chips = {chip1}".format(chip1 = chip), font = ('Courier', 15, 'italic'), align="center")
-while True:
-    while True:
+hgw = True
+while hgw:
+    while hgw:
         pot = 0
         cardS = turtle.Turtle()
         cardS.hideturtle()
@@ -127,7 +102,7 @@ while True:
         cardS.write(("Entree fee of 50"), font = ('Courier', 20, 'italic'), align="center")
         sleep(2)
         t11 = turtle.textinput("Choice", "Do you want to play?  y/n for all questions and numbers for bets  ")
-        cardS.undo() 
+        cardS.undo()
         if t11 == ('yes') or t11 == ('y'):
             chip -= 50
             chip1-= 50
@@ -137,7 +112,7 @@ while True:
             nd1.undo()
             nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
             nd2.undo()
-            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center") 
+            nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
             print("Your balance is", chip)
             import itertools
             import random
@@ -153,12 +128,12 @@ while True:
             check_error = 0
             comp1 = deck[c]
             comp2 = deck[d]
-            p = deck[0] 
-            o = deck[1] 
-            e = deck[5] 
-            l = deck[6] 
-            x = deck[7] 
-            u = deck[9] 
+            p = deck[0]
+            o = deck[1]
+            e = deck[5]
+            l = deck[6]
+            x = deck[7]
+            u = deck[9]
             z = deck[11]
             card0 = turtle.Turtle()
             class Card:
@@ -318,7 +293,7 @@ while True:
             p2 = 0
             t = 0
             k = 0
-            count = -1 
+            count = -1
             count1 = -1
             count2 = -1
             count3 = -1
@@ -850,7 +825,7 @@ while True:
             print("The first card on the table is a {RANK} of {SUIT}.".format(RANK = e[0], SUIT = e[1]))
             print("The second card on the table is a {RANK} of {SUIT}.".format(RANK = l[0], SUIT = l[1]))
             print("The third card on the table is a {RANK} of {SUIT}.".format(RANK = x[0], SUIT = x[1]))
-            sleep(3)          
+            sleep(3)
             def timer():
                     turt = turtle.Turtle()
                     turt.hideturtle()
@@ -859,7 +834,7 @@ while True:
                     turt.forward(50)
                     turt.left(90)
                     turt.forward(100)
-                    turt.write(10, font = ('Courier', 50, 'italic'), align="center") 
+                    turt.write(10, font = ('Courier', 50, 'italic'), align="center")
                     ui = 10
                     ci = 0
                     while True:
@@ -870,7 +845,7 @@ while True:
                         ci += 1
                         turt.write(ui, font = ('Courier', 50, 'italic'))
                         if ui == 0:
-                            break 
+                            break
             def quit():
                 wn.bye()
             wn.listen(timer, "p")
@@ -1481,8 +1456,7 @@ while True:
             break
         else:
             wn.clear()
-
-    else:
+    elif:
         break
     if got == 0:
         mcard.undo()
@@ -1558,7 +1532,7 @@ while True:
         else:
             mcard.write("{suit}".format( suit = (comp2[0])[0]), font = ('Courier', 50, 'italic'), align="center")
         mcard.color("black")
-        sleep(1)           
+        sleep(1)
         if ct == 1:
             chip += pot
             pot = 0
@@ -1568,7 +1542,7 @@ while True:
             nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
             nd2.undo()
             nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
-            cd.write(("\n\n\nYou win {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
+            cd.write(("\n\n\nYou win!\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
             wn.clear()
@@ -1581,7 +1555,7 @@ while True:
             nd1.write("Your Chips = {chip}".format(chip = chip), font = ('Courier', 15, 'italic'), align="center")
             nd2.undo()
             nd2.write("Opponent Chips = {chip1}".format(chip1 = chip1), font = ('Courier', 15, 'italic'), align="center")
-            cd.write(("\n\n\n      The computer wins {p1}, {p2}.\n\n\n      Your opponents balance\n    is {win}. Your balance\n    is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
+            cd.write(("\n\n\n      The computer wins!\n\n\n      Your opponents balance\n    is {win}. Your balance\n    is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
             sleep(4)
             cd.undo()
             wn.clear()
@@ -1606,17 +1580,17 @@ while True:
 ct = 1
 ct1 = 1
 if chip > chip1:
-    cd.write(("\n\nYou win the game {p1}, {p2}.\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
+    cd.write(("\n\nYou win the game!\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
     sys.exit()
 if chip == chip1:
-    cd.write(("\n\nTie {p1}, {p2}.\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
+    cd.write(("\n\nTie!\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
     sys.exit()
 if chip1 > chip:
-    cd.write(("\n\n\nThe computer wins {p1}, {p2}.\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
+    cd.write(("\n\n\nThe computer wins!\n\n\nYour opponents balance\n is {win}.Your balance\n is {lose}".format(p1 = p1, p2 = p2, win = chip1, lose = chip)), font = ('Courier', 15, 'italic'), align="center")
     sleep(4)
     cd.undo()
     sys.exit()
